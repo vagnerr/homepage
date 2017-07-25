@@ -2,8 +2,24 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
 var browserSync = require('browser-sync').create();
+var scp = require('gulp-scp');
 
+var config = {
+  host: 'ziggy.vagnerr.com',
+  port: 22,
+  username: 'peter',
+  //privateKey: fs.readFileSync('/Users/zensh/.ssh/id_rsa')
+}
 
+gulp.task('deploy', function () {
+    gulp.src('public/*')
+        .pipe(scp({
+            host: 'ziggy.vagnerr.com',
+            user: 'peter',
+            port: 22,
+            path: '/home/peter/www/dev.vagnerr.com/docroot'
+        }));
+});
 
 // define the default task and add the watch task to it
 gulp.task('default', ['watch']);
