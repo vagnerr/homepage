@@ -13,6 +13,7 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.2",
+    "gulp-nunjucks-render": "^2.2.1",
     "gulp-scp": "0.0.3",
     "gulp-sitemap": "^4.2.0",
     "less": "^2.7.2"

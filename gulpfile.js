@@ -4,6 +4,7 @@ var path        = require('path');
 var browserSync = require('browser-sync').create();
 var scp         = require('gulp-scp');
 var sitemap     = require('gulp-sitemap');
+var nunjucks    = require('gulp-nunjucks-render');
 
 var config = {
   host: 'ziggy.vagnerr.com',
@@ -33,6 +34,18 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./public/css'));
 });
 
+
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('src/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucks({
+      path: ['src/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('public'))
+});
+
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
@@ -42,7 +55,7 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sitemap', function () {
-    gulp.src('src/**/*.html', {
+    gulp.src('public/**/*.html', {
             read: false
         })
         .pipe(sitemap({
