@@ -42,7 +42,7 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sitemap', function () {
-    gulp.src('public/**/*.html', {
+    gulp.src('src/**/*.html', {
             read: false
         })
         .pipe(sitemap({
@@ -51,11 +51,17 @@ gulp.task('sitemap', function () {
         .pipe(gulp.dest('./public'));
 });
 
+gulp.task('static', function () {
+   gulp.src('src/**/*.{html,jpg,png}')
+    .pipe(gulp.dest('./public'));
+});
 
-gulp.task('watch', ['browserSync', 'less'], function(){
+gulp.task('watch',
+          ['browserSync', 'less', 'static','sitemap'],   // Init the public dir on first run
+          function(){
   gulp.watch('src/less/**/*.less', ['less', browserSync.reload]);
   // Other watchers
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('public/*.html', browserSync.reload);
+  gulp.watch('src/*.{html,jpg,png}', ['static', 'sitemap',browserSync.reload]);
   gulp.watch('public/js/**/*.js', browserSync.reload);
 })
