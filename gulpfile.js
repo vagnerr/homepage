@@ -1,8 +1,9 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var path = require('path');
+var gulp        = require('gulp');
+var less        = require('gulp-less');
+var path        = require('path');
 var browserSync = require('browser-sync').create();
-var scp = require('gulp-scp');
+var scp         = require('gulp-scp');
+var sitemap     = require('gulp-sitemap');
 
 var config = {
   host: 'ziggy.vagnerr.com',
@@ -39,6 +40,17 @@ gulp.task('browserSync', function() {
     },
   })
 })
+
+gulp.task('sitemap', function () {
+    gulp.src('public/**/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: 'https://www.vagnerr.com'
+        }))
+        .pipe(gulp.dest('./public'));
+});
+
 
 gulp.task('watch', ['browserSync', 'less'], function(){
   gulp.watch('src/less/**/*.less', ['less', browserSync.reload]);
