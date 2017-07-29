@@ -17,7 +17,7 @@ var scpconfig = {
   path: '/home/peter/www/dev.vagnerr.com/docroot'
 }
 
-gulp.task('deploy', function () {
+gulp.task('deploy',['sitemap'], function () {  // always rebuild sitemap, just before deploying
 
   // using scp directly rather than gulp-scp as gulp-scp
   // doesnt properly handle the recursive file structure
@@ -73,7 +73,7 @@ gulp.task('sitemap', function () {
 });
 
 gulp.task('static', function () {
-   gulp.src('src/**/*.{html,jpg,png}')
+   gulp.src('src/static/**/*')
     .pipe(gulp.dest('./public'));
 });
 
@@ -88,12 +88,13 @@ gulp.task('htmllint', function() {
 
 
 gulp.task('watch',
-          ['browserSync', 'less', 'static','sitemap'],   // Init the public dir on first run
+          ['browserSync', 'less', 'nunjucks', 'static','sitemap'],   // Init the public dir on first run
           function(){
   gulp.watch('src/less/**/*.less', ['less', browserSync.reload]);
   // Other watchers
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('src/*.{html,jpg,png}', ['static', 'sitemap',browserSync.reload]);
+  gulp.watch('src/static/**/*', ['static',browserSync.reload]);
+  gulp.watch('src/**/*.nunjucks', ['nunjucks', browserSync.reload]);
   gulp.watch('public/js/**/*.js', browserSync.reload);
 })
 
