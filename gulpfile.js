@@ -6,26 +6,24 @@ var browserSync = require('browser-sync').create();
 var scp         = require('scp');
 var sitemap     = require('gulp-sitemap');
 var nunjucks    = require('gulp-nunjucks-render');
+var htmlLint    = require('gulp-html-lint');
 
-var config = {
+
+var scpconfig = {
   file: 'public/*',
   user: 'peter',
   host: 'ziggy.vagnerr.com',
   port: 22,
   path: '/home/peter/www/dev.vagnerr.com/docroot'
-  //username: 'peter',
-  //privateKey: fs.readFileSync('/Users/zensh/.ssh/id_rsa')
 }
 
 gulp.task('deploy', function () {
-//    gulp.src('public/*')
-//         .pipe(scp({
-//             host: 'ziggy.vagnerr.com',
-//             user: 'peter',
-//             port: 22,
-//             path: '/home/peter/www/dev.vagnerr.com/docroot'
-//         }));
-  scp.send( config, function (err) {
+
+  // using scp directly rather than gulp-scp as gulp-scp
+  // doesnt properly handle the recursive file structure
+  // NOTE: this does NOT remove files from the remote server
+  //       will neeed to switch to using rsync in future.
+  scp.send( scpconfig, function (err) {
     if (err) console.log(err);
     else console.log('Files transferred.');
   })
@@ -79,6 +77,16 @@ gulp.task('static', function () {
     .pipe(gulp.dest('./public'));
 });
 
+
+
+gulp.task('htmllint', function() {
+    return gulp.src('public/**/*.html')
+        .pipe(htmlLint())
+        .pipe(htmlLint.format())
+        .pipe(htmlLint.failOnError());
+});
+
+
 gulp.task('watch',
           ['browserSync', 'less', 'static','sitemap'],   // Init the public dir on first run
           function(){
@@ -88,3 +96,4 @@ gulp.task('watch',
   gulp.watch('src/*.{html,jpg,png}', ['static', 'sitemap',browserSync.reload]);
   gulp.watch('public/js/**/*.js', browserSync.reload);
 })
+
