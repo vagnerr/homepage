@@ -8,6 +8,7 @@ var sitemap     = require('gulp-sitemap');
 var nunjucks    = require('gulp-nunjucks-render');
 var htmlLint    = require('gulp-html-lint');
 var csslint     = require('gulp-csslint');
+var csslintStylish = require('csslint-stylish');
 
 
 var scpconfig = {
@@ -80,18 +81,36 @@ gulp.task('static', function () {
 
 
 
-gulp.task('htmllint', function() {
+gulp.task('htmllint', ['nunjucks','static'], function() {
     return gulp.src('public/**/*.html')
         .pipe(htmlLint())
         .pipe(htmlLint.format())
         .pipe(htmlLint.failOnError());
 });
 
-gulp.task('csslint', function() {
-  gulp.src('public/css/*.css')
+// de-anonimize function so it can be used as ci as well
+function csslintfunc() {
+  return gulp.src('public/css/*.css')
     .pipe(csslint())
-    .pipe(csslint.formatter());
+    .pipe(csslint.formatter(csslintStylish));
+};
+gulp.task('csslint', ['less'], csslintfunc );
+
+gulp.task('csslint-ci', function() {
+  // seperate call due to the fact that failFormater
+  // kills the detailed output on a failure.
+  csslintfunc()
+    .pipe(csslint.failFormatter('fail'));
 });
+
+gulp.task('test', ['htmllint','csslint'], function () {
+  console.log("test complete");
+})
+gulp.task('test-ci', ['htmllint','csslint-ci'], function () {
+  console.log("test complete");
+})
+
+
 
 gulp.task('watch',
           ['browserSync', 'less', 'nunjucks', 'static','sitemap'],   // Init the public dir on first run
