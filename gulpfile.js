@@ -7,6 +7,7 @@ var scp         = require('scp');
 var sitemap     = require('gulp-sitemap');
 var nunjucks    = require('gulp-nunjucks-render');
 var htmlLint    = require('gulp-html-lint');
+var csslint     = require('gulp-csslint');
 
 
 var scpconfig = {
@@ -86,6 +87,11 @@ gulp.task('htmllint', function() {
         .pipe(htmlLint.failOnError());
 });
 
+gulp.task('csslint', function() {
+  gulp.src('public/css/*.css')
+    .pipe(csslint())
+    .pipe(csslint.formatter());
+});
 
 gulp.task('watch',
           ['browserSync', 'less', 'nunjucks', 'static','sitemap'],   // Init the public dir on first run
