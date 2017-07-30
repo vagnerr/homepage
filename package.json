@@ -4,7 +4,7 @@
   "description": "homepage",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test-ci"
+    "test": "gulp test"
   },
   "author": "Peter J. Wise",
   "license": "ISC",
