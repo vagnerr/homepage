@@ -94,9 +94,9 @@ function csslintfunc() {
     .pipe(csslint())
     .pipe(csslint.formatter(csslintStylish));
 };
-gulp.task('csslint', ['less'], csslintfunc );
 
-gulp.task('csslint-ci', function() {
+gulp.task('csslint',    ['less'], csslintfunc );
+gulp.task('csslint-ci', ['less'], function()  {
   // seperate call due to the fact that failFormater
   // kills the detailed output on a failure.
   csslintfunc()
@@ -107,7 +107,9 @@ gulp.task('test', ['htmllint','csslint'], function () {
   console.log("test complete");
 })
 gulp.task('test-ci', ['htmllint','csslint-ci'], function () {
+  console.log("=============");
   console.log("test complete");
+  console.log("=============");
 })
 
 
