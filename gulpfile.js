@@ -65,53 +65,41 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sitemap', function () {
-    gulp.src('public/**/*.html', {
-            read: false
-        })
-        .pipe(sitemap({
-            siteUrl: 'https://www.vagnerr.com'
-        }))
-        .pipe(gulp.dest('./public'));
+  gulp.src('public/**/*.html', {
+    read: false
+  })
+  .pipe(sitemap({
+    siteUrl: 'https://www.vagnerr.com'
+  }))
+  .pipe(gulp.dest('./public'));
 });
 
 gulp.task('static', function () {
-   gulp.src('src/static/**/*')
+  gulp.src('src/static/**/*')
     .pipe(gulp.dest('./public'));
 });
 
 
 
 gulp.task('htmllint', ['nunjucks','static'], function() {
-    return gulp.src('public/**/*.html')
-        .pipe(htmlLint())
-        .pipe(htmlLint.format())
-        .pipe(htmlLint.failOnError());
+  return gulp.src('public/**/*.html')
+    .pipe(htmlLint())
+    .pipe(htmlLint.format())
+    .pipe(htmlLint.failOnError());
 });
 
-// de-anonimize function so it can be used as ci as well
-function csslintfunc() {
+gulp.task('csslint',    ['less'], function()  {
   return gulp.src('public/css/*.css')
     .pipe(csslint())
-    .pipe(csslint.formatter(csslintStylish));
-};
-
-gulp.task('csslint',    ['less'], csslintfunc );
-gulp.task('csslint-ci', ['less'], function()  {
-  // seperate call due to the fact that failFormater
-  // kills the detailed output on a failure.
-  csslintfunc()
-    .pipe(csslint.failFormatter('fail'));
+    .pipe(csslint.formatter(csslintStylish))
+    .pipe(csslint.formatter('fail'));
 });
 
 gulp.task('test', ['htmllint','csslint'], function () {
-  console.log("test complete");
-})
-gulp.task('test-ci', ['htmllint','csslint-ci'], function () {
   console.log("=============");
   console.log("test complete");
   console.log("=============");
 })
-
 
 
 gulp.task('watch',
