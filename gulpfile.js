@@ -10,6 +10,8 @@ var csslint         = require('gulp-csslint');
 var csslintStylish  = require('csslint-stylish');
 var bootlint        = require('gulp-bootlint');
 
+var gutil = require('gulp-util');
+var Crawler = require('simplecrawler');
 
 var scpconfig = {
   file: 'public/*',
@@ -29,6 +31,52 @@ gulp.task('deploy',['sitemap'], function () {  // always rebuild sitemap, just b
     if (err) console.log(err);
     else console.log('Files transferred.');
   })
+
+
+});
+
+
+gulp.task('checklinks', function(cb) {
+
+  var last_referrer="";
+  var link_failure=false;
+
+  var crawler = Crawler("http://localhost:3000/")     //<---------------TODO: PARAMETERISE?
+    .on("fetchcomplete", function (queueItem, response) {
+        if ( queueItem.host != crawler.host ) {
+          console.log("Offsite>>: " + queueItem.url);
+        }
+    })
+    .on('fetch404', function(queueItem, response) {
+      if( !link_failure ){
+        link_failure=true;
+        gutil.log("Broken Links...");
+      }
+      if( queueItem.referrer != last_referrer ) {
+        last_referrer = queueItem.referrer;
+        gutil.log("  " + queueItem.referrer + ": ");
+      }
+      gutil.log('                         ' + queueItem.url + " ["+response.statusCode+"]");
+
+    })
+    .on('complete', function(queueItem) {
+      gutil.log("done?");
+      cb();
+    })
+  ;
+
+  crawler.filterByDomain = false;
+  crawler.addFetchCondition(function(queueItem, referrerQueueItem, callback) {
+      callback(
+                null,
+                (
+                  !queueItem.path.match(/^\/browser-sync/i) &&   // Skip browser-sync links
+                  referrerQueueItem.host === crawler.host        // check offsite links (1 hop only)
+                )
+              );
+  });
+
+  crawler.start();
 
 
 });
