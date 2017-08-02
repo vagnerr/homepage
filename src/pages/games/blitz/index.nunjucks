@@ -1,0 +1,277 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Blitz</h1>
+        <p>
+          <a href="#" onclick="new_game();">New Game</a>
+        </p>
+
+
+
+  <!-- TABLE WILL APPEAR HERE -->
+
+
+
+
+
+  <!-- Here tis code -->
+  <script>
+    <!--
+
+    var image_plane = 0;
+    var image_building = 1;
+    var image_bomb = 2;
+    var image_blank = 3;
+
+    var images = new Array();
+
+    images[image_plane] = new Image();
+    images[image_plane].src = "/img/blitz/plane.gif";
+    images[image_building] = new Image();
+    images[image_building].src = "/img/blitz/building.gif";
+    images[image_bomb] = new Image();
+    images[image_bomb].src = "/img/blitz/bomb.gif";
+    images[image_blank] = new Image();
+    images[image_blank].src = "/img/blank_gif.gif";
+
+    var loaded = 0;
+    var game_ready = false;
+    var lost = false;
+    check_preload();
+
+    var heap = new Array();
+    var rows = 15;
+    var cols = 30
+    var total_squares = rows * cols;
+    var plane_pos = 0;
+
+    var level = 1;
+    var move_tick = 8;
+    var curr_tick = 0;
+    var game_cycle;
+
+    var bomb_running = false;
+    var bomb_tick = 4;
+    var bomb_curr_tick = 0;
+    var bomb_tot_damage = 2;
+    var bomb_curr_damage = 0;
+    var bomb_position = 0;
+
+    // draw game board now!!
+    draw_game_board()
+
+
+    function new_game(){
+      if(!game_ready){
+        alert('hang on a bit');
+        return;
+      }
+      clearInterval(game_cycle);
+      level = 1;
+      plane_pos = 0;
+      move_tick = 8;
+      curr_tick = 0
+      heap = null;
+      heap = new Array();
+      bomp_running = false;
+      clear_screen();
+      build_city();
+
+      // start new game looop
+      game_cycle = setInterval("game_logic()",20);
+    }
+
+    function game_logic(){
+      if(lost){
+        clearInterval(game_cycle);
+        alert('game over');
+        lost = false;
+      }else{
+        game_loop();
+      }
+    }
+
+    function game_loop(){
+
+      draw_plane();
+      if(curr_tick == move_tick){
+        move_plane()
+        curr_tick=0;
+      }else{
+        curr_tick++;
+      }
+      if(bomb_running){
+        if(bomb_curr_tick == bomb_tick){
+          drop_bomb();
+          bomb_curr_tick =0;
+        }else{
+          bomb_curr_tick++;
+        }
+      }
+    }
+
+    document.onkeypress = keep_keys;
+    NS4 = (document.captureEvents);
+    if (NS4)
+      document.captureEvents(Event.KEYPRESS);
+
+    function keep_keys(ev) {
+      if(bomb_running){
+        return;
+      }
+      if (NS4){
+        keys = String.fromCharCode(ev.which).toLowerCase();
+      }else{
+        keys = String.fromCharCode(event.keyCode).toLowerCase();
+      }
+      check_key();
+      keys = '';
+      return false;
+    }
+
+    function check_key(){
+      if(keys == ' '){
+        //Drop a bomb
+        release_bomb();
+      }
+    }
+
+    function release_bomb(){
+      bomb_running = true;
+      bomb_pos = plane_pos;
+      bomb_curr_tick=0;
+      bomb_curr_damage=0;
+    }
+
+    function drop_bomb(){
+      swap('b' +bomb_pos,images[image_blank]);
+      bomb_pos += cols;
+      if (bomb_pos >= total_squares){
+        //off the screen
+        bomb_running = false;
+        return;
+      }
+      if (heap[bomb_pos] == 1){
+        //building square
+        heap[bomb_pos] = 0;
+        bomb_curr_damage++;
+        if (bomb_curr_damage == bomb_tot_damage){
+          //used bomb
+          bomb_running = false;
+          swap('b' +bomb_pos,images[image_blank]);
+          return;
+        }
+      }
+      swap('b' +bomb_pos,images[image_bomb]);
+    }
+
+    function clear_screen(){
+      for (var i = 0 ; i < total_squares;i++){
+        swap('b' + i,images[image_blank]);
+      }
+    }
+
+    function build_city(){
+      for (var i=2 ; i < cols-2; i++){
+        var height = Math.floor((Math.random()*(rows-2))) +1;
+        //var height = i-2; if (height>8){height=8};
+        //build building
+        for (var j=(cols*(rows-1)+i) ; j >= (cols*(rows-height)+i) ; j -=cols){
+          heap[j]=1;
+          swap('b' + j,images[image_building]);
+        }
+      }
+
+    }
+
+    function move_plane(){
+      if (plane_pos < total_squares-1){
+        plane_pos++;
+        if (heap[plane_pos] ==1){
+          //hit building
+          lost=true;
+        }
+      }else{
+        // cleared board
+        plane_pos = 0;
+      }
+    }
+
+    function draw_plane(){
+      swap('b' + plane_pos,images[image_plane]);
+      if (plane_pos > 0){
+        swap('b' + (plane_pos-1),images[image_blank]);
+      }
+    }
+
+    function swap(img,source){
+      if (document.images){
+        document.images[img].src = source.src;
+      }
+    }
+
+    function check_preload(){
+      for (var i = 0; i < images.length; i++){
+        check_image(i);
+      }
+    }
+
+    function check_image(index){
+      if(!images[index].complete){
+        setTimeout('check_image(' + index + ')',100);
+      }else{
+        loaded++;
+        if(loaded == images.length){
+          game_ready = true;
+        }
+      }
+    }
+
+    function draw_game_board(){
+      var cell_count = 0;
+      document.write('<table border = "0">');
+      for (var i = 0;i < rows;i++){
+        document.write('<tr>');
+        for (var j=0; j< cols;j++){
+
+          document.write('<td><img name="b' + cell_count +'" src="/img/blank_gif.gif" width="20" height="20" alt="" border="0"></td>');
+          cell_count++;
+        }
+        document.write('</tr>');
+      }
+      document.write('</table>');
+    }
+    //-->
+  </script>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

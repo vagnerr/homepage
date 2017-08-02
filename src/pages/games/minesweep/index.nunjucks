@@ -1,0 +1,43 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Mine Sweeper</h1>
+        <h2>Applet</h2>
+          ... needs java browser plugin...
+          <applet code=MineSweep.class codebase="./" width=350 height=350>
+          </applet>
+        <h2>The Source</h2>
+        <ul>
+          <li><a href="MineSweep.java">MineSweep.java</a>
+          <li><a href="MinePanel.java">Minepanel.java</a>
+          <li><a href="MnPanel.java">MnPanel.java</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

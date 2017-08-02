@@ -1,0 +1,177 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('portfolio')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Internet and E-Commerce Security</h1>
+        <p>
+With the huge growth of the Internet, more and more companies are beginning
+to realise how important it is that they should have a presence. Many will
+simply advertise their presence and contact details on the World Wide Web and
+leave it at that. However a growing number now realise the potential of
+moving beyond simple contact details and actually selling their products and
+services "online." This presents them with the new problems of the logistics
+of providing a method of payment for their customers. There is the need to
+ensure that customers' credit card details are safely and securely passed
+from customer to merchant, card details are securely stored by the merchant,
+and that the card details are successfully passed to  the bank. In
+addition a lone merchant is faced with the prospect of convincing the
+customer of their security and integrity. This is where NetBanx is able to
+assist by relieving the merchant of these responsibilities.
+</p><p>
+Companies like NetBanx have resolved the problems of securely acquiring the
+customers credit card details so that a payment to the merchant's account is
+made automatically. Just one company doing this for many merchants has many
+advantages. Firstly only one company needs the knowledge of how to deal
+directly with the banks, rather than there being hundreds of potential links.
+Any link from one computer system to another is inherently a risk and
+therefore the less connections there are the smaller the risk is. Having only
+a few companies dealing with credit card transactions can theoretically make
+them a greater target. However those few can then be prepared for that risk
+by concentrating on their security. This leaves the merchant able to
+concentrate their own site content knowing that the payment process is in
+professional hands.
+</p><p>
+There is also an additional advantage to a single company such as NetBanx
+handling all the transactions, and that is customer confidence. Any person
+who is faced with the prospect of buying goods or services over the world
+wide web has the problem of having to deal with a company who they potentially
+have never met. They may have no other contact details other than the
+companies web address and so they may naturally feel uneasy about giving out
+their credit card details. Where a merchant forwards the customer onto
+NetBanx for the payment the customer is able to see that a well known company
+is receiving their credit card details. This of course also benefits the
+merchant as the customer is more likely to proceed with the purchase. However
+being well known as such a convenient location to authorise credit cards can
+have disadvantages from its ability to determine which cards are real.
+Netbanx has however put into place processes to detect and deny this.
+</p><p>
+As mentioned before the major drawback of centralisation of online credit card
+transactions is the problem of becoming a greater target. It is therefore
+important that companies such as NetBanx take security very seriously. There
+are several different type of security that must be considered. The first
+and most basic is physical security. The most advanced security methods can be
+compromised by an unauthorised person, either from outside of the company, or
+even an employee of the company being able to gain direct physical access to
+your computer system. An example of this is the fact that a well known make of
+network router can be totally compromised in less than two minutes by just
+connecting a laptop computer. To this end as many measures as is appropriate
+should be put into place to prevent such access. You can start simply by using
+locked cabinets and doors, electronic locks such as key entry or credit card
+swipes, up through to retina scans, razor wire fences, armed guards, and
+vicious dogs. The more methods that can be put into place the better. Within
+reason of course.
+</p><p>
+Having dealt with the basic matter of not letting anyone in physically,
+companies are then face with "remote" access attempts. Taken to the extreme,
+the most effective way of neutralising these attempts would be to not be
+accessible remotely. I.e. take your computer system, unplug it, lock it in a
+safe, and bury it in concrete. This makes it very secure, but quite useless.
+More appropriately companies need to stop any remote access that is not
+explicitly required. In the case of NetBanx, the only remote access that is
+required is the ability for a client computer to request web pages from the
+servers, and to send credit card information to them. Therefore any other
+remote access is denied. Methods of doing this include but are not limited to
+"firewalls." Firewalls are computers that sit between a companies computer
+system and the Internet, and in some cases between different sections of the
+companies computer system. They are set up in such a way that only authorised
+connections may be made and allow the companies system administrators to
+concentrate on the single point of attack at the firewall rather than having
+to carefully examine every single machine on the network.
+</p><p>
+While being a good start, firewalls are not the only security mechanism that
+can be put in place and should not be the only one. Treat with caution any
+organization that states anything resembling "We are secure we have a
+firewall." Better still ins to combine firewalls used as the first line of
+defence with additional layers of security. To start with, only those machines
+that are required to be visible on the Internet should be visible. All others
+should be hidden away behind further layers of security. The normal
+configuration for this would be to only have the companies web servers and
+FTP servers visible to the Internet. And machines that are not required to be
+visible such as and especially, staff PCs should be given private IP addresses
+that cannot be on the Internet and any requests they make for data should be
+passed onto another machine that will forward the requests for them. Again
+this allows the system administrators to concentrate on securing just that
+single machine. Most operating systems tend to install "fully open" with all
+services enabled and all the associated security holes ready for exploitation,
+so having to only deal with these security issues by "hardening" just a small
+number of machines makes the task a whole lot easier.
+</p><p>
+An additional problem faced in dealing with securing a system is the problem
+that all systems have software, and that software is likely to have some bugs.
+Many server programs such as mail servers and web servers are so large and
+complex that it is extremely difficult to locate all the bugs and unfortunately
+hackers exploit these bugs in order to compromise the system. With most of
+these programs it is not possible to fix all these bugs and any organisation can
+only rely on vendor fixes coming out and installing them before a hacker
+exploits them on the system. The best defence to this is to protect these
+programs by running much more simple "proxies" in their place. These can then
+"sanitise" any input that goes to the real server process (on a hidden machine)
+and will generally be very short simple pieces of code that can be very
+carefully checked for exploitable bugs.
+</p><p>
+Despite all the security measures that may be implemented it is not possible
+to be 100% secure and there is always a risk that a company's system may be
+compromised. Therefore it is important to have appropriate procedures to deal
+with this eventuality. Of primary concern should be to stop any further
+penetration into the system, find and close the security hole, restoration of
+the system back into service and then finally potentially trace the source of
+the attack, in that order. In order to prevent penetration firewall and other
+security servers should be configured to "fail safe" I.e. they should shut
+down access when an attempt is made to compromise them. Good system logs
+should assist in determining the method of access. However system logs on a
+compromised server may be inaccurate so it is advisable for servers to log
+information remotely to a machine behind all the firewalls and so forth, where
+it should be the last machine to be attacked. All the machines should be
+backed up on a regular basis, especially those machines that are directly
+accessible from the Internet (I.e. web and FTP servers) in order to restore
+them to service as quickly as possible. Finally once again good system logs
+may assist in the trace of the person(s) involved.
+</p><p>
+Security for E-commerce therefore, introduces an additional process that
+requires particular security measures. These measures are in part laid out
+by the acquiring banks as prerequisites to having the authority to take payments
+over the Internet. This does not have to have an impact on the individual
+merchant as Payment Solution Providers (e.g. organisations like NetBanx) act
+as a convenient outsource of the problem. PSPs also remove burdens of cost and
+on-going maintenance of such systems too, and these factors together with the
+speed at which a business can be up and trading over the Internet provide
+great benefits for choosing to work with a PSP.
+</p><p>
+The need for a secure payment solution apart, E-commerce in itself does not
+introduce any new requirements for security. The technology and methodologies
+are well known and practised by some already. The need for Internet security
+for any particular organisation however, starts as soon as the organisation
+has a web presence. It becomes increasingly important as the contribution to
+overall revenues by the web presence rises as without security the entire
+organisation is put at risk.
+
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

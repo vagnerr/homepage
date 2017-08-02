@@ -37,7 +37,7 @@
           refuse to upload until you do so, along with automatic
           tagging of the current revision as "LIVE". It is all
           OO Perl making use of CPAN modules such as
-          <a href="http://search.cpan.org/author/GMCCAR/VCS-0.10/VCS.pm">VCS</a> to
+          <a href="http://search.cpan.org/~gmccar/VCS-0.10/VCS.pm">VCS</a> to
           allow the flexibility to the user of any source control
           system they wish (CVS/RCS/etc.) and Class Factory systems
           allowing you to configure which type of upload method
