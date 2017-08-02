@@ -1,14 +1,14 @@
-var gulp        = require('gulp');
-var less        = require('gulp-less');
-var path        = require('path');
-var browserSync = require('browser-sync').create();
-//var scp         = require('gulp-scp');
-var scp         = require('scp');
-var sitemap     = require('gulp-sitemap');
-var nunjucks    = require('gulp-nunjucks-render');
-var htmlLint    = require('gulp-html-lint');
-var csslint     = require('gulp-csslint');
-var csslintStylish = require('csslint-stylish');
+var gulp            = require('gulp');
+var less            = require('gulp-less');
+var path            = require('path');
+var browserSync     = require('browser-sync').create();
+var scp             = require('scp');
+var sitemap         = require('gulp-sitemap');
+var nunjucks        = require('gulp-nunjucks-render');
+var htmlLint        = require('gulp-html-lint');
+var csslint         = require('gulp-csslint');
+var csslintStylish  = require('csslint-stylish');
+var bootlint        = require('gulp-bootlint');
 
 
 var scpconfig = {
@@ -79,7 +79,13 @@ gulp.task('static', function () {
     .pipe(gulp.dest('./public'));
 });
 
-
+gulp.task('bootlint', ['nunjucks','static'], function() {
+    return gulp.src('public/**/*.html')
+        .pipe(bootlint({
+          loglevel:     'warning',
+          stoponerror:  'true'
+        }));
+});
 
 gulp.task('htmllint', ['nunjucks','static'], function() {
   return gulp.src('public/**/*.html')
@@ -95,7 +101,7 @@ gulp.task('csslint',    ['less'], function()  {
     .pipe(csslint.formatter('fail'));
 });
 
-gulp.task('test', ['htmllint','csslint'], function () {
+gulp.task('test', ['htmllint','bootlint','csslint'], function () {
   console.log("=============");
   console.log("test complete");
   console.log("=============");

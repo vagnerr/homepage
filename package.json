@@ -13,6 +13,7 @@
     "browser-sync": "^2.18.13",
     "csslint-stylish": "0.0.6",
     "gulp": "^3.9.1",
+    "gulp-bootlint": "^0.8.1",
     "gulp-csslint": "^1.0.0",
     "gulp-html-lint": "0.0.2",
     "gulp-less": "^3.3.2",
