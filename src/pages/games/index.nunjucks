@@ -1,0 +1,76 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('games')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Games</h1>
+        <p>
+          I have written a few simple Java games over the years:-
+        </p>
+        <dl>
+          <dt><a href="minesweep/index.html">MineSweep</a></dt>
+          <dd>
+            I wrote this little app whilst at university just to play with
+            the language. :-)
+          </dd>
+          <dt>Paul Raymonds Sexclub</dt>
+          <dd>
+            One of the projects I was tasked with during my employment with
+            NetInvest Group (now Transact Group) was to build some casino games
+            for Paul Raymonds Sexclub. The games I produced were:-
+            <ul>
+                    <li>Strip Black Jack
+                    <li>Strip Wheel Of Fortune
+                    <li>Strip Poker
+            </ul>
+
+            Yes there was a certain theme to them all :-).
+          </dd>
+          <dt><a href="blitz/">Blitz</a></dt>
+          <dd>
+          This is based on a
+          game I used to have on my old Vic20 as a kid. Actually I never really
+          liked the game as my parents used to keep beating me at it. :-}
+          Still I wanted to fiddle a little with image swaps and potential
+          game ideas and the game logic for it is quite simple. The idea is to
+          level the city by dropping bombs (press space bar to drop)
+                 on the buildings before you are flying
+          too low and you crash into them. It works best on Mozilla, you might
+          be able to get it to work with other browsers but it depends on how
+          well they handle image swaps. Thanks to
+          <a href="http://www.simonproctor.com/">Simon</a> who gave me permission to
+          "borrow" some of his
+          game
+                 code to get started. :-)
+          </dd>
+          <dt><a href="globalthermonuclearwar.html">Global Thermonuclear War</a>
+
+        </dl>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

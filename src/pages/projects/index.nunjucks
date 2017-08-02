@@ -15,40 +15,42 @@
 {{nav.active('projects')}}
 
   <div class="container-fluid maincontent">
-<div class="row">
-<div class="col-md-12">
-  <p> hello world again foo ba       lorem
-      </p>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Current Projects</h1>
+        <p>
+        The projects listed here are the ones that I am
+        currently working on.
+        </p>
+        <dl>
+          <dt><a href="makelive.html">Makelive</a></dt>
+          <dd>
+          Website release system written in OO perl.
+          </dd>
+          <dt><a href="eventsdb.html">Events DB</a></dt>
+          <dd>
+          Sophisticated Event Calendar system. Intended
+          to replace the UK Conventions Diary that I
+          maintained while at university. However it
+          should be able to handle most types of
+          events.
+          </dd>
+          <dt><a href="jobtrack.html">Job Applications Tracker</a></dt>
+          <dd>
+          Web based system (written in PHP) to keep track
+          of your contacts with recruitment agencies so
+          you can have all the information to hand when
+          talking to them.
+          </dd>
+          <dt><a href="loonies.html">The Loony Bin</a></dt>
+          <dd>
+          Humour Mailing list that I maintain the archive
+          for.
+          </dd>
+        </dl>
 
-      <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>2Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>3Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>4Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>5Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>6Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>7Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>8Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-      <p>ZZZZZZZZZZZZZZZZZZZZZZZZ</p>
       </div>
-
-  </div>
-
+    </div>
   </div>
 
 

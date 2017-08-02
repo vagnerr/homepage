@@ -1,0 +1,100 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Perl</h1>
+        <p>
+          I have been using Perl now for over 10 years, since a University
+          friend gave me a quick intro into how useful it can be.
+        </p>
+        <dl>
+          <dt><a href="/projects/makelive.html">Makelive</a></dt>
+          <dd>
+          I am working on a website release system based loosely
+          on a system that we used to use on the first student run
+          web server at my University. More details on my progress
+          can be found <a href="/projects/makelive.html">here</a>.
+          </dd>
+          <dt><a href="/projects/parse-webcounter.html">
+            Parse::WebCounter
+            </a>
+          </dt>
+          <dd>
+            A simple perlmodule that can read back the value
+            of a standard graphical webcounter. More detail
+            can be found <a href="/projects/parse-webcounter.html">here</a>.
+
+
+          </dd>
+          <dt>Seti</dt>
+          <dd>
+          I have a number of machines in my home network and the
+          spare CPU cycles are currently dedicated to the
+          <a href="http://www.setiathome.ssl.berkeley.edu/">
+            Seti Project
+          </a>.
+          Obviously being involved in that is all about the stats
+          so I have written a number of simple Perl scripts to
+          extract current user and group stats from the XML feeds
+          that the seti server supplies. There are pages on the
+          seti server to display the data already, but I wanted
+          to play and not have to browse the site to get the
+          stats all the time. I have three scripts at the moment.
+          <dl>
+            <dt><a href="getstat.pl">getstat.pl</a></dt>
+            <dd>
+            Grabs the data for a particular user (by email
+            address) and prints it to the screen.
+            </dd>
+            <dt><a href="getstats.pl">getstats.pl</a></dt>
+            <dd>
+            Grabs the stats for a particular group (by name)
+            and lists all the users in order of most
+            reported blocks.
+            </dd>
+            <dt><a href="storestats.pl">storestats.pl</a></dt>
+            <dd>
+            Similar to getstats.pl, however instead of
+            printing out the results it stores the data in
+            a database. You can then run it daily as a cron
+            job and collect a nice amount of data for
+            generating graphs of your progress against the
+            progress of fellow team mates (will be working
+            on these analysis scripts next).
+            </dd>
+
+          </dl>
+
+          </dd>
+
+        </dl>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Java</h1>
+        <p>
+          Most of my Java work in the past has been games based (check out the
+          <a href="/games/">Games Page</a> for more details). However I have
+          been reading up on J2EE recently. In addition to that a friend and
+          I spent a couple of weeks writing Java AI code for
+            Java Robots or "RoboCode."
+          It was more of a challenge in trigonometry and
+          simultaneous equations math than in Java, but it was a fun
+          diversion and well worth a look if you want to kill some time.
+          I have included the source of one of my robots
+          <a href="Wander2.java">here</a> if you are interested. Its really
+          quite dumb, but it does try and calculate "leading shots." Of
+          course all the target has to do is change direction or speed
+          and you will miss but its a start. At some time I will add
+          an explanation of the trig needed for the leading shots should
+          anyone want to take that and improve on it. :-)
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

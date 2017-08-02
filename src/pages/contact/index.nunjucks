@@ -15,40 +15,124 @@
 {{nav.active('contact')}}
 
   <div class="container-fluid maincontent">
-<div class="row">
-<div class="col-md-12">
-  <p> hello world again foo ba       lorem
-      </p>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Contacting Me</h1>
 
-      <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>2Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>3Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>4Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
+        <p>
+          You can email me at peter@bloodaxe.com. If you prefer
+          more private communication then feel free to use PGP,
+          my public key follows:-
+        </p>
 
-      <p>5Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>6Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>7Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>8Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
+<pre>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: PGP Personal Privacy 6.5.3
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
+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
+BojTp1L+W623LVujOvEV4DOETj7iGs8d+YTQaOtZuVCL7l9zNtA6QLlJY+m3bWo/
+9hpDdtKSKxVe+sZ1hfqnQBBj3RG0gjwlf44ITD7tLUDiP/ZUMZEAEi7JvLH08xFB
+bgQzXc7Q83URP+oiPFLxQUKs9sWJAD8DBRA1DS5OJgt8bBCtm2wRApRRAKDn4x67
+vayDA/RjUywfVOiH9J2CHwCfdvWMtoJtIFpVn7vTbjwRSB7RlOeJAJUDBRA1UzHO
+J6Vw1ZD/u1EBAZkSBACYcfw0ZNVplUxReShkFCKGk4cz7qNaKFJrvCzsPBx4YwUj
+TUIfu3MyD5uwCnS54cSd5LwUa0hldtH/p/ifMaHrDmAqp0oeVwOUPXkITvwmO91F
+cveyGSuJbvMrmZ/IRNWPWtBe5Te3o9eG9viqPRmFxW9MTjTcIfzo/PW25TyHK7Qk
+VmFnbmVyciA8dmFnbmVyQGFzbGFuLmhvbGx5ZmVsZC5vcmc+iQCVAwUQNQ0171dr
++kmav5MJAQESxAP/bneK76K3PTX5QlmQYlQPhplXGli97KLa7tBIiSjvj+L0Adqw
+PdHf3MGVD/9Rip1kI83lDq7zqSRtXbhW71kavrSlHqS7fc0DSSXs+Gj+/Yz7osmd
+essiurU/29K80D+IZ3y0tr8x8g9J+eZG8DDyA5GTlpHktVxI3gkxENMEF5CJAD8D
+BRA1DS5OJgt8bBCtm2wRAkEGAJ0cgv2VAB7dtaTOpNyEhFpCl6/B+ACg4mordnpb
+BK1b7pyFUksyWZrYGBm0LVAuIEouIFdpc2UgQi5TYy4oSG9ucykgPHBqd0B0YXJk
+aXMudWtjLmFjLnVrPokAlQMFEDUNNe9Xa/pJmr+TCQEBuW8D/RTmBswmz+XNS5j6
+WMiyKtE8M4E3c/QyfqWrPS0qVvoYo1/YPz364gI96rzuiOzgAljEogAQNeFdcZgr
+7Vi+kGsKKn096jQsg1Mrynuk4k+9LZlJ6lJvo3B+cUrbJwV4gmJnJkNC7Wv6to5r
+VZp1qozyH2/9CXJvjXgGU+hrg0GRiQA/AwUQNQ0uTiYLfGwQrZtsEQLVQwCg21K2
+58yXZorGoBCsdIHeP6NnTx8AoM34WeCMM7IY+feAZH6j8Zo8m+N1tC1QLiBKLiBX
+aXNlIEIuU2MuKEhvbnMpIDxwZXRlQGJ1c3NsLnVrYy5hYy51az6JAJUDBRA1DTXv
+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
+jXehzdfR
+=CFJA
+-----END PGP PUBLIC KEY BLOCK-----
+</pre>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-      <p>ZZZZZZZZZZZZZZZZZZZZZZZZ</p>
       </div>
-
-  </div>
-
+    </div>
   </div>
 
 

@@ -1,0 +1,72 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('portfolio')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>University</h1>
+        <p>
+          I spent six years at university, both as an
+          undergraduate, and a postgraduate. Here is some
+          of the stuff I got up to.
+        </p>
+        <dl>
+          <dt>C classes</dt>
+          <dd>
+I got to earn a little money whilst I was doing Ph.D. research (in Medical
+Electronics) supervising C classes for the second year electronics
+undergraduates. They were using new editor tools on a new operating system
+(the *new* Windows NT had just been deployed across the site), and that had
+caused many teething troubles. So I produced some
+<a href="chelppages/index.html">help pages</a> to assist the students.
+It is provided here more as a curiosity, although if you are trying to
+use a windows c compiler with PFE it might be helpful to you. :-)
+          </dd>
+          <dt>Star Trek Society</dt>
+          <dd>
+Throughout my time at University I was on the Committee of the Star Trek
+Society (Founding Committee Member in fact). I was Secretary, and when some
+group of physicists invented the World Wide Web (apparently), I also took
+on the responsibility of Webmaster for the society home pages. Alas the
+website is no more as the web server in question was taken down a number of
+years ago. However you can still view the old pages via the trusty
+<a href="http://web.archive.org/web/19980516030907/alethea.ukc.ac.uk/SU/Societies/StarTrek/">Way Back Machine</a>.
+<br><br>
+Possibly the best part of the site was
+<a href="http://web.archive.org/web/19990204024946/alethea.ukc.ac.uk/SU/Societies/StarTrek/Conventions/">The UK Convention Diary</a>
+that I administered. It would seem that it had become the definitive resource
+if you wanted to go to a Star Trek or Sci-Fi Convention in the UK, and
+apparently still is, which is unfortunate as the server no longer exists.
+However I have plans to build a new one, and its going to be bigger and
+better. So watch this space. And if you come across anyone else trying to
+link to the old location on alethea.ukc.ac.uk then tell them to watch this
+space as well.
+          </dd>
+        </dl>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

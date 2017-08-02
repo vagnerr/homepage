@@ -1,0 +1,51 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('projects')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Job Applications Tracker</h1>
+        <p>
+          I had been keeping track of job applications with aid
+          of an excel spread sheet, but that wasn't good enough,
+          so I wrote a fully functional job tracking system with
+          PHP and MySQL. It has full cross-referencing of Agencies
+          and Agents with Jobs and notes. Plus the storage of the
+          job adverts and source where appropriate. It is
+          currently functional and in final test. You can find
+          more details of the project on
+          <a href="http://sourceforge.net/projects/jobtrack/">
+            SourceForge</a>.
+          It will have its first release shortly but until then
+          all the code is available in the
+          <a href="http://cvs.sourceforge.net/viewcvs.py/jobtrack">
+            CVS Repository</a>.
+
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

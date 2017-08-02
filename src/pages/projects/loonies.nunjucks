@@ -1,0 +1,54 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('projects')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>The Loony Bin</h1>
+        <p>
+          A long standing commitment has been the general
+          maintenance of this mail archive. In its current basic
+          form it is just an indexed store of the nearly ten
+          years of jokes. However I have been experimenting
+          (with a friend) with possible improvements to the site
+          for things such storage of the mails, and indexes in
+          a database, and have the entire site run dynamically
+          with either Perl or PHP. This would allow better
+          maintenance and search indexing, along with reduced
+          content size.
+        </p>
+        <p>
+          If you want to see the site then you can access
+          it by going to:-<br>
+          <a href="https://www.theloonies.co.uk/">
+            https://www.theloonies.co.uk/
+          </a>
+
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

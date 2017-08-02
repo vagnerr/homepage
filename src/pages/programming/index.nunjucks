@@ -15,40 +15,25 @@
 {{nav.active('programming')}}
 
   <div class="container-fluid maincontent">
-<div class="row">
-<div class="col-md-12">
-  <p> hello world again foo ba       lorem
-      </p>
-
-      <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>2Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>3Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>4Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>5Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>6Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>7Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>8Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore quidem eos, pariatur itaque quasi expedita necessitatibus et, quam facere vero facilis ea nihil neque iusto sit. Perspiciatis, odio vitae!</p>
-      <p>Quam ab dolore odit nisi aliquam facilis fuga atque tempora numquam? Amet ad fugiat veniam in nihil officiis odio, cumque nostrum ducimus, sint modi possimus aperiam incidunt eveniet. Nobis, dolor?</p>
-      <p>Velit fugiat perferendis sed, distinctio magni impedit amet libero, minima accusantium consequatur nam eligendi ex iusto voluptate, itaque nihil corporis a deserunt assumenda quae quo iste quis. Laudantium, placeat, temporibus.</p>
-      <p>Explicabo aspernatur hic sed tempora eveniet fugit aliquam necessitatibus, obcaecati alias accusamus et sequi impedit magnam blanditiis. Est velit accusantium, dicta enim commodi, libero blanditiis qui, ab soluta minima aperiam.</p>
-      <p>ZZZZZZZZZZZZZZZZZZZZZZZZ</p>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Programming</h1>
+        <p>
+          In these pages you will find some examples of what I have done
+          in various programming languages. This isn't everything I have
+          done, and the list of languages is by no means complete. For
+          a more complete list of my skills you need to check my
+          <a href="/portfolio/cv.html">CV</a>.
+        </p>
+        <ul>
+          <li><a href="perl.html">Perl</a></li>
+          <li><a href="php.html">PHP</a></li>
+          <li><a href="java.html">Java</a></li>
+          <li><a href="javascript.html">JavaScript</a></li>
+          <li><a href="/games/">Games</a></li>
+        </ul>
       </div>
-
-  </div>
-
+    </div>
   </div>
 
 

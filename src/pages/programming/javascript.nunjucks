@@ -1,0 +1,57 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>JavaScript</h1>
+        <p>
+          I have dabbled in JavaScript over the years, be it as
+          a challenge, or to fulfil a need. Included here are
+          some of the results. (more to come).
+        </p>
+        <dl>
+          <dt><a href="http://www.bloodaxe.com/JPS/">JPS</a></dt>
+          <dd>
+            <a href="http://www.bloodaxe.com/JPS/">
+              <img align="right" src="http://www.bloodaxe.com/JPS/jpslock.gif" alt="" border="0" width="45" height="56">
+            </a>
+            One major app which I was involved in was the writing of
+            a password protection
+            system that you can implement on free webspace. It is
+            called JPS.
+            <br><br>
+            For further details on this utility you can visit it's <a href="http://www.bloodaxe.demon.co.uk/JPS/">home page.</a>
+          </dd>
+          <dt><a href="/games/blitz/index.html">Blitz</a>
+          <dd>
+            A simple game that I knocked together see the
+            <a href="/games/">games page</a> for more details.
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

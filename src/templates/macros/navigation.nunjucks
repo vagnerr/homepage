@@ -19,11 +19,11 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="/programming/">Programming
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Perl</a></li>
-          <li><a href="#">PHP</a></li>
-          <li><a href="#">Java</a></li>
-          <li><a href="#">Javascript</a></li>
-          <li><a href="#">Games</a></li>
+          <li><a href="/programming/perl.html">Perl</a></li>
+          <li><a href="/programming/php.html">PHP</a></li>
+          <li><a href="/programming/java.html">Java</a></li>
+          <li><a href="/programming/javascript.html">Javascript</a></li>
+          <li><a href="/games/">Games</a></li>
         </ul>
       </li>
       <li{%if activePage == 'portfolio' %} class="active"{% endif %}><a href="/portfolio/">Portfolio</a></li>

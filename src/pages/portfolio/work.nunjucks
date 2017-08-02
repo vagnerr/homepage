@@ -1,0 +1,76 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('portfolio')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>NetInvest</h1>
+        <p>
+          My work at NetBanx/NetInvest/Transact Group
+          was quite varied, included here is some of the
+          more interesting items.
+        </p>
+        <dl>
+          <dt><a href="ecommercesecurity.html">E-commerce Security</a></dt>
+          <dd>
+In late 1999 I was asked by the IT Director to write an article on E-commerce
+Security. I believe it was published in the September 1999 Issue of
+"Connect Magazine" however I never actually saw it in print :-(. I do
+still have it of course and it is reproduced
+<a href="ecommercesecurity.html">here</a> for your amusement. If anyone
+did see it, I would love to know I got published (well kind
+of anyway :-) ).      </dd>
+          <dt>InterShop</dt>
+          <dd>
+I built the original extension for InterShop 3 to integrate it with the
+NetBanx payment system. I also built the NetBanx cartridges for InterShop4
+and InterShop4-ePages. Along with the corresponding NetBanx server code.
+I also got to visit the InterShop engineers at their headquarters in Jena -
+Germany which was an enjoyable experience as well as a rewarding one.
+          <dd>
+
+          <dt>PremiumNet/TeleBanx</dt>
+          <dd>
+I took part in the original research and development of the PremiumNet
+premium rate Internet access system. I was involved in the initial build
+of the client dialler (built with Borland C++). I installed and made
+appropriate modifications to the Unix RADIAS server, tied it into our web
+based administration/statistics server (written in Perl using a MySQL
+backend), and produced some web server mod_perl authentication modules to
+help facilitate simplified integration into 3rd party web servers.
+          </dd>
+          <dt>Sexclub</dt>
+          <dd>
+I worked on the original build of Paul Raymonds Sexclub. Installing the
+web servers. Writing Perl, CGI and SSI code for the interactivity of the
+site. Integrating it with NetBanx etc. I also built some games in Java
+for the project. See the <a href="/games/index.html">Games page</a> for
+more details.
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}
