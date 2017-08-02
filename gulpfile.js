@@ -40,12 +40,19 @@ gulp.task('checklinks', function(cb) {
 
   var last_referrer="";
   var link_failure=false;
+  var offsite_links = {};
+  var redirect_links = {};
 
   var crawler = Crawler("http://localhost:3000/")     //<---------------TODO: PARAMETERISE?
     .on("fetchcomplete", function (queueItem, response) {
         if ( queueItem.host != crawler.host ) {
-          console.log("Offsite>>: " + queueItem.url);
+          //gutil.log("Offsite>>: " + queueItem.url);
+          offsite_links[queueItem.url] = queueItem.referrer;
         }
+    })
+    .on('fetchredirect', function(oldQueueItem, redirectQueueItem, response) {
+      //gutil.log("REDIRECT: " + oldQueueItem.url + " > " + redirectQueueItem.url );
+      redirect_links[oldQueueItem.url] = redirectQueueItem.url + " ("+oldQueueItem.referrer+") ["+response.statusCode+"]";
     })
     .on('fetch404', function(queueItem, response) {
       if( !link_failure ){
@@ -60,7 +67,22 @@ gulp.task('checklinks', function(cb) {
 
     })
     .on('complete', function(queueItem) {
-      gutil.log("done?");
+      gutil.log("Crawl complete...");
+      if ( Object.keys(offsite_links).length ) {
+        gutil.log( "");
+        gutil.log( "Offsite links....");
+        for ( var link in offsite_links ) {
+          gutil.log( "  " + offsite_links[link] + " > " + link );
+        }
+      }
+      if ( Object.keys(redirect_links).length ) {
+        gutil.log( "");
+        gutil.log( "Redirects....");
+        for ( var link in redirect_links ) {
+          gutil.log( "   " + link + ": " + redirect_links[link]);
+        }
+      }
+
       cb();
     })
   ;
