@@ -1,0 +1,141 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+    <H1>C/NT Problems - Misc</h1>
+
+    <HR>
+
+    <H2><A NAME="MountW">Drive W: Not Mounted</a></h2>
+
+    <P>
+      Occasionally NT will simply Decide to unmount your W: Drive
+    </p>
+    <P>
+      To Fix this you will have
+      to "Map the network drive." To do this start up <STRONG>Windows
+      NT Explorer</strong><BR>
+
+      <IMG SRC="NTExpl1.gif" WIDTH="337" HEIGHT="332" ALT="(Select: Start, Programs, Windows NT Explorer)">
+    </p>
+    <P>
+      Then from the menu select <STRONG>Tools, Map Network Drive...</strong>
+      <BR>
+      <IMG SRC="NTExpl2.gif" WIDTH="304" HEIGHT="167" ALT="">
+    </p>
+    <P>
+      Then Select <STRONG>W:</strong> from the <STRONG>Drive:</strong>
+      Combo box. It should read
+      <STRONG><CODE>W:   \\eentserv\Apps</code></strong>
+      if it doesn't then you need to fill in the
+      <STRONG>Path:</strong> below with
+      <STRONG><CODE>\\eentserv\Apps</code></strong>
+      and click on <STRONG>OK</strong>
+    </p>
+
+    <HR>
+
+    <H2><A NAME="Quota">Over Quota</a></h2>
+
+    <P>
+      You can check to see if you are over quota by selecting your
+      directory from <STRONG>ELG on Bodiam</STRONG> and clicking on it
+      with the right mouse button and selecting
+      <STRONG>Properties</STRONG>. Then look for the property
+      <STRONG>Size</STRONG> in the window. This will eventually show
+      the total amount of disk space you are using. if it goes over
+      5Meg then you are over quota and will not be able to write to
+      your own directory.
+    </P>
+    <P>
+      To get back under quota you must remove some of the unwanted
+      files. You can either delete them (select them and hit the
+      delete key) or move them to your directory of eentserv. To move
+      them you must open up your directory on eentserv and select the
+      files/folders/directories you want to move and drag them to your
+      eentserv folder <STRONG>With the RIGHT Mouse Button</STRONG> You
+      will then be asked if you want to copy, move or make a
+      shortcut. Select <STRONG>Move</STRONG> and it will proceed to
+      move all the files across.
+    </P>
+    <H3>NOTE:</h3>
+    <P>
+      Going over quota is very likely to cause your
+      <A href="#Security">Security settings to be corrupted</a> so it
+      is best to fix them as well.
+    </P>
+
+    <HR>
+
+    <H2><A NAME="Security">Corrupt Security Settings</a></h2>
+
+    <P>
+      To check to see if you security settings have been corrupted
+      select your home folder from Bodiam with the right mouse button
+      and select <STRONG>properties</STRONG> then select the
+      <STRONG>Security</STRONG> tag and click on the <STRONG>Security
+      Settings</STRONG> button. If your security settings have been
+      corrupted then a message box will appear to tell you and when
+      you hit OK you will find it blank. Other wise you will just see
+      the security settings all filled in with your login, Bodiam
+      Administrators, etc.
+    </P>
+    <P>
+      If your security settings have been corrupted then you will need
+      to add yourself back on to access your own files. To do this:-
+    </P>
+    <OL>
+      <LI>
+  Select the check-boxes for <STRONG>Files in this
+  directory</STRONG> and <STRONG>Subdirectories</STRONG>.
+      <LI>
+  Click on the <STRONG>Add</STRONG> button.
+      <LI>
+  Select <STRONG>Find User</STRONG> and enter your login, then
+  click on <STRONG>OK</STRONG>.
+      <LI>
+  Select your login and select <STRONG>Full Access</STRONG> from
+        the access options, and click on <STRONG>Add</STRONG>
+      <LI>
+  Your login should then appear on the security settings window
+  with <STRONG>&lt;Full&gt;&lt;Full&gt;</STRONG> next to it.
+      <LI>
+  Click on <STRONG>OK</STRONG>. NT should then go through all
+        your files resetting permissions.
+    </OL>
+    <H3>NOTE:</H3>
+    <P>
+      You must select <STRONG>Full Access</STRONG> for yourself. The
+      default is read only and if you let NT set the permissions to
+      Read Only you will not be able to change them and will have to
+      get the System administrator to fix it.
+    </P>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

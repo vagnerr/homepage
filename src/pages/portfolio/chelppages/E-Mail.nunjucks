@@ -1,0 +1,124 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+    <H1>E-Mailing Assignments</h1>
+
+    <HR>
+    <H2><A NAME="Netscape">Netscape</a></h2>
+    <OL>
+      <LI>
+  To mail your assessment using Netscape go to the assignment page
+  and click on the e-mail address you need to send the assignment
+  to (you can in fact use
+  <a href="mailto:pjw?subject=C Assessment - Week 9">this link</a>
+  to mail your assessment).
+      <LI>
+  If the subject has not been filled in the subject as
+  <STRONG>C Assessment - Week 9</STRONG>
+      <LI>
+  Click on the
+  <STRONG><img src="Attach.gif" WIDTH="42" HEIGHT="42" alt="Attach"></STRONG> button.
+      <LI>
+  Click on <STRONG>Attach File...</STRONG>.
+      <LI>
+        Select your c assessment source code (eg assess2.c) with the
+        mouse and click on <STRONG>OK</STRONG>.<!-- Possibly Load -->
+      <LI>
+  The name of your code should then appear in the window. Click
+  on <STRONG>OK</STRONG>.
+      <LI>
+  The name of your code should then appear in the
+  <STRONG>Attachment</STRONG> box on the <STRONG>Netscape:
+  Compose</STRONG> window. Click on the
+  <STRONG><img src="Send.gif" WIDTH="42" HEIGHT="42" alt="Send"></STRONG> button.
+      <LI>
+  Your assessment should then have been mailed.
+    </OL>
+    <P>
+      If on clicking on the e-mail address in Netscape to start the
+      mail you get an error message about no host name given after the
+      @ Then you need to Select <STRONG>Options, Mail and News
+      Preferences..., Identity</STRONG> and add
+      <STRONG>@ukc.ac.uk</STRONG> to your Email Address.
+    </P>
+
+    <HR>
+    <H2><A NAME="Simeon">Simeon</a></h2>
+    <OL>
+      <LI>
+  Start up Simeon and Select <STRONG>Compose, New Message</STRONG>.
+      <LI>
+  Fill in the <STRONG>To</STRONG> field with <STRONG>pjw</STRONG>.
+      <LI>
+  Fill in the <STRONG>Subject</STRONG> field with
+  <STRONG>C Assessment - Week 10</STRONG>.
+      <LI>
+  Click on the
+  <STRONG><img src="Attach.gif" WIDTH="42" HEIGHT="42" alt="Attach"></STRONG> button.
+      <LI>
+  A dialog box will ask for the name of the file you wish to
+  attach, enter the name of your source code and click on
+  <STRONG>OK</STRONG>.
+      <LI>
+  Select the <STRONG>Type of attachment</STRONG> and set it to
+  <STRONG>Plain Text</STRONG>.
+      <LI>
+  Click on <STRONG>OK</STRONG>.
+      <LI>
+  An icon representing your code will appear in the compose
+  window. You can then click on the
+  <STRONG><img src="Send.gif" WIDTH="42" HEIGHT="42"  alt="Send"> Button</STRONG> Your
+  assessment should then be e-mailed.
+    </OL>
+
+
+    <HR>
+    <H2><A NAME="UNIX">From UNIX</a></h2>
+    <P>
+      If you want to e-mail your assessment from UNIX then you will
+      need to upload it from your NT account (if you have not also
+      been working on your assessment on UNIX). To do this, log into
+      your UNIX account then type <STRONG>ftp bodiam</STRONG> for
+      username give <STRONG>UKC\&lt;your_login&gt;</STRONG>, and for
+      password give your NT password. You will then need to change
+      into the right directory eg
+      <STRONG>cd ELT/&lt;your_login&gt;</STRONG> then type
+      <STRONG>get &lt;filename&gt;</STRONG> where &lt;filename&gt; is
+      the name of your c assessment. You can then type
+      <STRONG>quit</STRONG>. You will now have you work on UNIX where
+      you can use your favorite e-mail program and insert the file or
+      you can mail the assessment with the command :-<BR>
+      <STRONG>
+  mail pjw -s "C Assessment - Week 10" &lt; &lt;filename&gt;
+      </STRONG>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

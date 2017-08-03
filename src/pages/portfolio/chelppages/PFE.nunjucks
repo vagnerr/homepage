@@ -1,0 +1,58 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+    <H1>C/NT Problems - PFE</h1>
+
+    <HR>
+    <H2><A NAME="Blank">"Command:" and/or the "Working Directory:" entries are blank</a></h2>
+    <P>
+      When you come to use the Compile or Run <!--Image-->  buttons
+      you find that the "Command:" and/or the "Working Directory:"
+      entries are blank.
+    </P>
+    <P>
+      You may have installed PFE before the initialisation files were
+      set up properly, or possibly your initialisation has been
+      deleted. Either way, the best solution will be to re-install
+      PFE.
+    </P>
+    <HR>
+    <H2><A NAME="OverQuota">"Permission Denied"</a></h2>
+    <P>
+      When you try to save or re-name files you get a "Permission
+      Denied" message.
+    </P>
+    <P>
+      The Most likely cause of this is that you have gone
+      <A href="Misc.html#Quota">Over Quota</A> or your
+      <A href="Misc.html#Security">Security Settings are Corrupt</A>.
+    </P>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

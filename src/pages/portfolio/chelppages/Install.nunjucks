@@ -1,0 +1,154 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>C/NT Problems - Installing</h1>
+   <HR>
+
+    <H2><A NAME="NoInst">No Install Packages Icon</a></h2>
+    <P>
+      If you have no Install Packages icon on your desktop then your
+      profile is probably corrupt and you will have to go and see
+      <A HREF="mailto:helpdesk">computing help-desk</a>.
+    </p>
+
+    <HR>
+
+    <H2><A NAME="NoPFE">Cannot Find PFE in the Install Packages List</a></h2>
+    <P>
+      PFE is installed from the "
+      <STRONG>
+  Install Electronics Packages
+      </strong>,"
+      icon not from the "Install Packages" icon. Try there.
+    </p>
+
+    <HR>
+
+    <H2><A NAME="NoElecPack">No Electronics Packages Icon</a></h2>
+    <P>
+      You have to install the "Electronics Packages" Icon
+      yourself. Double Click on the Install Packages Icon and select
+      "<STRONG>Install Electronics Packages</strong>" from the list
+      and click on the Install button. If it says you have already
+      installed this and do you want to install it again click on
+      "Yes." Once you have done this the "Electronics Packages" Icon
+      should appear somewhere below the "Install Packages" on the desktop.
+    </p>
+
+    <HR>
+
+    <H2><A NAME="ElecPackErr">Clicking on Electronics Packages Causes an Error</a></h2>
+    <P>
+      When you double-click on the Electronics Packages icon it
+      produces the error
+      <img src="WinInst1.gif" WIDTH="340" HEIGHT="119" alt="The application list (W:\wininstall.lst). is missing!">
+      or something similar, rather than running.
+    </p>
+    <P>
+      There are two possibilities for this. First is that the
+      "Shortcut" entry has been set incorrectly. This can be checked by
+      clicking and holding down the <STRONG>right</strong> mouse
+      button over the electronics packages icon and selecting
+      <STRONG>properties</strong>.<BR>
+      <IMG SRC="EPackPr1.gif" WIDTH="177" HEIGHT="240" ALT=""><BR>
+      Then from the options at the top
+      select <STRONG>shortcut</strong>. The Target should read
+      "<CODE>W:\WinInstall\Winstall.exe W:\wininstall\winapps.lst</code>"<BR>
+      <IMG SRC="EPackPr2.gif" WIDTH="369" HEIGHT="237" ALT=""><BR>
+      If it doesn't then change it so that it does.
+    </p>
+    <P>
+      The second possibility is that your profile does not have the
+      Electronics Apps drive mounted on W: in which case see
+      <A HREF="Misc.html#MountW">Drive W: Not Mounted</a>.
+    </p>
+
+    <HR>
+
+    <H2><A NAME="FileNotFound">"File not Found!"</a></h2>
+    <P>
+      At about 70% installed the install package program produces the
+      error "Error n: File Not Found"
+    </p>
+    <P>
+      What has actually happened is Install Packages has not been able
+      to write the PFE config file to your home folder. The most
+      likely cause of this is that you are
+      <A HREF="Misc.html#Quota">
+  over quota
+      </a>
+      or your
+      <A HREF="Misc.html#Security">
+  security settings have been corrupted.
+      </a>
+    </p>
+
+    <HR>
+
+    <H2><A NAME="CannotFind">Cannot Find PFE</a></h2>
+    <P>
+      After logging out and back in again you cannot find PFE.
+    </p>
+    <P>
+      First check to see if it is on the start menu under:-
+    </p>
+
+    <DL>
+      <DT><STRONG>Start</strong>
+      <DD>
+  <DL>
+    <DT><STRONG>Programs</strong>
+    <DD>
+      <DL>
+        <DT><STRONG>Electronics</strong>
+        <DD>
+    <DL>
+      <DT><STRONG>PFE</strong>
+      <DD>
+        <STRONG>PFE32</strong>
+      </dd>
+    </dl>
+        </dd>
+      </dl>
+    </dd>
+  </dl>
+      </dd>
+    </dl>
+    <P>
+      If it is not there then try re-installing PFE again. If it is
+      vanishing after logging out and back in again then your NT
+      profile maybe getting corrupted/reset and you will have to speak
+      to <A HREF="mailto:helpdesk">computing help-desk</a>
+    </p>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

@@ -1,0 +1,215 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Common C/NT Problems</h1>
+        <p>
+    <P>
+      Before asking for help check the following links to see if the
+      problem has been encountered before:-
+   </p>
+    <DL>
+      <DT><STRONG>Installing Problems:</strong>
+      <DD>
+  <UL>
+    <LI>
+      <A HREF="Install.html#NoInst">
+        No Install Packages Icon
+      </a>
+    </li>
+    <LI>
+      <A HREF="Install.html#NoPFE">
+        Cannot Find PFE
+      </a>
+      in the Install Packages List
+    </li>
+    <LI>
+      <A HREF="Install.html#NoElecPack">
+        No Electronics Packages Icon
+      </a>
+    </li>
+    <LI>
+      Clicking on
+      <A HREF="Install.html#ElecPackErr">
+        Electronics Packages Causes an Error
+      </a>
+    </li>
+    <LI>
+      PFE fails to install giving the error
+      <A HREF="Install.html#FileNotFount">
+        "File not Found!"
+      </a>
+    </li>
+    <LI>
+      After logging out and back in again you
+      <A HREF="Install.html#CannotFind">
+        cannot find PFE.
+      </a>
+    </li>
+  </ul>
+
+
+      <DT><STRONG>Compiling Problems:</strong>
+      <DD>
+  <UL>
+    <LI>
+      PFE produces the error
+      <A HREF="Compile.html#NoSub">
+        "Substitution cannot be performed
+      </a>
+      in the specified command line as either no file is
+      currently open, or the current window does not contain a
+      named file"
+    </li>
+    <LI>Compiler produces the following in the output window:-
+      <UL>
+        <LI>
+    <A HREF="Compile.html#PathMissing">
+      The name specified is not recognized
+    </a>
+    as an<BR>
+    internal or external command, operable program or
+    batch file.
+        </li>
+        <LI>
+    <A HREF="Compile.html#DotCExt">
+      <em>&lt;filename&gt;</em>: file not recognized:
+    </a>
+    File format not recognized
+        </li>
+        <LI>
+      gcc.exe: <em>&lt;filename&gt;</em>:
+    <A HREF="Compile.html#FileTooLong">
+      No such file or directory (ENOENT)
+    </a>
+    <BR> gcc.exe: No input files
+        </li>
+        <LI>
+    <A HREF="Compile.html#MathLib">
+      Undefined symbol sqrt first referenced in file
+    </a>...
+        </li>
+        <LI>
+    <A HREF="Compile.html#RealError">
+      <em>&lt;filename&gt;</em>: In function `main':<BR>
+      <em>&lt;filename&gt;</em>:76:
+    </a>  ......
+        </li>
+      </ul>
+    </li>
+  </ul>
+      </dd>
+      <DT><STRONG>Running Problems:</strong>
+      <DD>
+  <UL>
+    <LI>
+      PFE produces the error
+      <A HREF="Running.html#NoSub">
+        "Substitution cannot be performed
+      </a>
+      in the specified command line as either no file is
+      currently open, or the current window does not contain a
+      named file"
+    </li>
+    <LI>
+      PFE produces "Unable to create process: [2]
+      <A HREF="Running.html#NotCompiled">
+        The system cannot find the file specified."
+      </a>
+    </li>
+    <LI>
+      PFE produces the error "Unable to create process: [193]
+      <A HREF="Running.html#NotDotC1">
+        %1 is not a valid Windows NT application.
+      </a>
+    <LI>
+      You get the error
+      <A HREF="Running.html#NotDotC2">
+        "This file does not have a program associated with it
+      </a>
+      for performing this action. Create an association in My
+      Computer by clicking View and then clicking Options." When
+      you try and run your program from the DOS prompt
+    </li>
+    <LI>
+      <A HREF="Running.html#DosClose">
+        DOS window closes suddenly
+      </a>
+    </li>
+    <LI>
+      <A HREF="Running.html#Scanf">
+        You type some input but nothing happens
+      </a>
+    </li>
+  </ul>
+      </dd>
+      <DT><STRONG>Problems with PFE:</strong>
+      <DD>
+  <UL>
+    <LI>
+      When you come to use the compile or run buttons you find
+      that the
+       <A HREF="PFE.html#Blank">
+        "<STRONG>Command:</strong>" and/or the
+        "<STRONG>Working Directory:</strong>" entries are blank.
+      </a>
+    </li>
+    <LI>
+      When you try and save or re-name files you get a
+      <A HREF="PFE.html#OverQuota">
+        "Permission Denied"
+      </a>
+      message
+    </li>
+  </ul>
+      </dd>
+      <DT><STRONG>E-Mailing Solutions</strong>
+      <DD>
+  <UL>
+    <LI>With <A HREF="E-Mail.html#Netscape">Netscape</a></li>
+    <LI>With <A HREF="E-Mail.html#Simeon">Simeon</a></li>
+    <LI>From <A HREF="E-Mail.html#UNIX">UNIX</a></li>
+  </ul>
+      </dd>
+
+      <DT><STRONG>Other General/NT Problems</strong>
+      <DD>
+  <UL>
+    <LI><A HREF="Misc.html#MountW">Drive W: Not Mounted</a></li>
+    <LI><A HREF="Misc.html#Quota">Over quota</a></li>
+    <LI><A HREF="Misc.html#Security">Corrupt Security Settings</a></li>
+  </ul>
+      </dd>
+    </dl>
+
+
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

@@ -1,0 +1,221 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+   <H1>C/NT Problems - Compiling</h1>
+
+    <HR>
+    <H2><A NAME="NoSub">"Substitution cannot be performed..."</a></h2>
+    <P>
+      PFE produces the error <em>"Substitution cannot be performed in the
+      specified command line as either no file is currently open, or
+      the current window does not contain a named file"</em>
+    </p>
+    <p>
+      This is caused by one of two things.
+    </p>
+      <DL>
+      <DT><STRONG>You have the wrong window in focus.</strong>
+      <DD>
+  (eg. you have a compiler output window selected).  You need to
+  select the window with the c-code in it.
+
+      <DT><STRONG>Your c-code has no filename.</strong>
+      <DD>
+  (ie. you have not saved it yet) You should save your c-code
+  first. This will give it a filename to substitute for the %f
+  and %n in the command line. <STRONG>The filename must end in
+  .C</strong>
+    </dl>
+
+    <HR>
+    <H2><A NAME="PathMissing">"The name specified is not recognized..."</a></h2>
+
+    <P>
+      This can be caused by two things.
+    </p>
+    <DL>
+      <DT>
+  <STRONG>NT has somehow unmounted drive W:</strong>
+      <DD>
+  To Fix this you need to see
+  <A HREF="Misc.html#MountW">
+    Drive W: Not Mounted
+  </a>
+      <DT>
+  <STRONG>NT has lost your path information</strong>
+      <DD>
+  Installing some other packages (and occasionally when NT feels
+  like it) can remove the location of the gcc compiler from your
+  path environment variable. To put it back select
+  <STRONG>Start, Settings, Control Panel</strong>
+  <IMG SRC="CtrlPan1.gif" WIDTH="293" HEIGHT="261" ALT="">
+  and then double-click on <STRONG>System</strong> The
+  <STRONG>System Properties</strong> window should then
+  appear. From this select the <STRONG>Environment</strong> tab
+  <IMG SRC="CtrlPan2.gif" WIDTH="410" HEIGHT="466" ALT="">
+  and select <STRONG>Path</strong> from the <STRONG>User
+  Variables</strong> list. This should fill in the
+  <STRONG>Variable</strong> and <STRONG>Value</strong> boxes at
+  the bottom of the window. The <STRONG>Value</strong> box
+  should include the
+  following:-<BR><CODE>%Path%;w:\Djgpp\bin</code><BR> It may
+  have more but it must have at least that. It does not have
+  that then you should <STRONG>add</strong>
+  <CODE><STRONG>;w:\Djgpp\bin</strong></code> to the end (do not
+  overwrite what is already there). The Press the
+  <STRONG>Set</strong> button, followed by the
+  <STRONG>Apply</strong> button. Then you <STRONG>MUST LOG-OUT
+  AND BACK IN</strong> otherwise NT will not recognise the
+  change to the path.
+    </dl>
+    <P>
+      If after checking these two you still get the same error message
+      then you can try changing the compile command. Click on the
+      compile button in PFE and instead of just clicking on OK, change
+      the <STRONG>Command</strong> from:- <BR>
+      <CODE><STRONG>gcc %f -o %n.exe</strong></code>
+      to
+      <CODE><STRONG>w:\Djgpp\bin\gcc %f -o %n.exe</strong></code>
+    </p>
+
+    <HR>
+    <H2><A NAME="DotCExt">"&lt;filename&gt;: file not recognized:..."</a></h2>
+    <P>
+      When you try and compile your code you get back a
+      <STRONG>Compiler Output</strong> window which contains
+      "&lt;filename&gt;: file not recognized: File format not recognized"
+    </p>
+    <P>
+      This is cause by not saving the file with a ".c"
+      extension. <STRONG>C-Code must end in .c</strong> For example
+      <CODE>assess1.c</CODE>
+    </p>
+
+    <HR>
+    <H2><A NAME="FileTooLong">"...No such file or directory (ENOENT)..."</a></h2>
+    <P>
+      When you try and compile your code you get the error
+      message:-<BR>
+      <CODE>
+  gcc.exe: &lt;filename&gt;: No such file or directory (ENOENT)<BR>
+  gcc.exe: No input files
+      </CODE>
+    </P>
+    <P>
+      This is most often caused by the filename you have used being
+      too long. Although Windows NT can handle long filenames, gcc is
+      a DOS application and can only handle filenames 8 characters
+      long and 3 for the extension. So it is best to keep to short
+      filenames. The easiest way to do this is to just select
+      <STRONG>Save As</STRONG> from the <STRONG>File</STRONG> menu and
+      give your code a new (and shorter) name.
+    </P>
+
+    <HR>
+    <H2><A NAME="MathLib">"Undefined symbol sqrt first referenced in file ..."</a></h2>
+    <P>
+      You are only likely to get this error message if you are
+      compiling your code on UNIX. To fix this, you need to tell gcc
+      to link the maths library with a command like:-<BR>
+      <CODE>gcc -o assess assess.c -lm</CODE>
+    </p>
+
+    <HR>
+    <H2><A NAME="RealError">"&lt;filename&gt;: In function `main':..."</a></h2>
+    <P>
+      If you try compiling your code and get a list of error messages
+      that look something like :-<br>
+      <CODE>
+  &lt;filename&gt;: In function `main':<BR>
+  &lt;filename&gt;:76: ...... <br>
+      </CODE>
+      Then the compiler is notifying you of errors in your source code
+      (rather than any system problems). It is up to you to find and
+      fix these errors yourself. However, here are a few tips on how
+      to proceed.
+    </p>
+    <DL>
+      <DT><STRONG>Start with the first error</STRONG>
+      <DD>
+  Always start with the first compiler error and try and fix
+  that first. It is quite possible that some of the earlier
+  errors also caused some of the later ones and so fixing the
+  first error may cause later ones to vanish.
+      <DT><STRONG>Re-compile every so often</STRONG>
+      <DD>
+  If you make any changes and fix any errors this may have an
+  effect on later errors (as mentioned above) especially if you
+  are fixing parse errors. So re-compiling may cause the list of
+  errors to become very much shorter.
+      <DT><STRONG>Don't try to fix too many errors at once</STRONG>
+      <DD>
+  The more errors the compiler encounters the more "confused" it
+  tends to become and so the less likely the errors will be
+  "real." So only fixing a few errors at a time should mean less
+  time looking for errors that don't really exist.
+      <DT><STRONG>Use the line numbers</STRONG>
+      <DD>
+  Most of the error messages come with a line number which
+  refers to the approximate line in your source code where the
+  error has occured. The error will normalcy be within a line or
+  two (probably lines before rather than after). Also be careful
+    if you make any changes that add or remove lines from the code
+  as the later line numbers will have changed.
+      <DT><STRONG>Look out for missing ;'s and }'s</STRONG>
+      <DD>
+  A lot of errors in compiling are caused by forgetting to put
+  these characters in the code. So it is worth looking out for
+  them. It is a lot easier if the code is well laid out. For
+  example it is easier to spot a missing } character in:-<BR>
+  <PRE>
+   for (i=1;i&lt;10;i++)
+   {
+      if (i &lt;= oval)
+      {
+     /*Do Something*/
+      }else{
+           /*Something Else */
+   }</PRE>
+  Than it would be in:- <BR><BR>
+
+  <CODE>
+   for (i=1;i&lt;10;i++)
+   {
+      if (i &lt;= oval)
+      {
+     /*Do Something*/
+      }else{
+           /*Something Else */
+   }
+
+       </CODE>
+    </DL>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

@@ -1,0 +1,152 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid banner-header" >
+  <h1>vagnerr.com</h1>
+</div>
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('programming')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+   <H1>C/NT Problems - Running</h1>
+
+    <HR>
+    <H2><A NAME="NoSub">"Substitution cannot be performed..."</a></h2>
+    <P>
+      PFE produces the error <EM>"Substitution cannot be performed in the
+      specified command line as either no file is currently open, or
+      the current window does not contain a named file"</EM>
+    </p>
+    <p>
+      This can be caused by the same two problems as those that cause
+      the same error during <a href="Compile.html#NoSub">Compiling</a>
+    </p>
+      <DL>
+      <DT><STRONG>You have the wrong window in focus.</strong>
+      <DD>
+	(eg. you have a compiler output window selected).  You need to
+	select the window with the c-code in it. This is most likely
+	as you will probably have just tried to compile your code.
+
+      <DT><STRONG>Your c-code has no filename.</strong>
+      <DD>
+	(ie. you have not saved it yet) You should save your c-code
+	first. This will give it a filename to substitute for the %f
+	and %n in the command line. <STRONG>The filename must end in
+	.C</strong> This is less likely as you would not have been
+	able to compile your code.
+    </dl>
+
+    <HR>
+    <H2><A NAME="NotCompiled">"...The system cannot find the file specified."</a></h2>
+
+    <P>
+      You try running your program (with the <STRONG>Run</STRONG> button,
+      <!--Image Here?-->) and you get
+      <EM>
+	"Unable to create process: [2] The system cannot find the file
+	specified."
+      </EM>
+    </P>
+    <P>
+      You must successfully compile your code before you can run it
+      otherwise you will have no executable to run.
+    </P>
+
+    <HR>
+    <H2><A NAME="NotDotC1">"...%1 is not a valid Windows NT application"</a></h2>
+    <P>
+      You try running your program (with the <STRONG>Run</STRONG>
+      button, <!--Image Here?-->) and you get
+      <EM>
+	"Unable to create process: [193] %1 is not a valid Windows
+         NT application.
+      </EM>
+    </P>
+    <P>
+      You have probably changed the <STRONG>Command to run</STRONG>
+      from <CODE>%n.exe</CODE> to something like
+      <CODE>assess1.c</CODE>
+      This will not work as you do not actually run the assess1.c gcc
+      compiles it into an executable called assess1.exe and you need
+      to run that. Either by putting back <CODE>%n.exe</CODE> or
+      by running <CODE>assess1.exe</CODE> or even just
+      <CODE>assess1</CODE>
+    </p>
+
+    <HR>
+    <H2><A NAME="NotDotC2">"This file does not have a program associated with it..."</a></h2>
+    <P>
+      You try running your program from the DOS prompt by typing
+      something like <CODE>assess1.c</CODE> and you get the error
+      <EM>
+	"This file does not have a program associated with it for
+	performing this action. Create an association in My Computer
+	by clicking View and then clicking Options."
+      </EM>
+    </P>
+    <P>
+      you do not actually run the assess1.c gcc
+      compiles it into an executable called assess1.exe and you need
+      to run that. So just type <CODE>assess1</CODE>
+    </P>
+
+    <HR>
+    <H2><A NAME="DosClose">DOS Window Closes Suddenly</a></h2>
+    <P>
+      On running your program the DOS window closes before you get a
+      chance to read the output.
+    </P>
+    <P>
+      The DOS window attached to the run command for PFE is configured
+      to close when your program exits, and your program will exit
+      when it gets to the end of the main function. The best way to
+      get round this is to start up a separate DOS window (with the
+      DOS <!--Image --> icon on PFE) and run your code manually, by
+      making sure you are on the Z drive (if you are not type
+      <CODE>z:</CODE> and press &lt;RETURN&gt;) and if your code were
+      called assess1.c then you would run it by typing
+      <CODE>assess1</CODE>
+    </p>
+
+    <HR>
+    <H2><A NAME="Scanf">You type some input but nothing happens</a></h2>
+    <P>
+      After running your code and it asks you for some input (if you
+      put something like <CODE>printf("Enter Values\n");</CODE> in
+      your code) you type some input and your program does not seem to
+      respond.
+    </P>
+    <P>
+      It is quite possible that this is due to problems with scanf. If
+      you put any trailing spaces in the format string of scanf, for
+      example:- <BR>
+      <PRE>
+   scanf("%d %d %d ",&f[0],&f[1],&f[2]);
+                  ^</PRE>
+      The the program will be waiting for that space before the scanf
+      function returns. To fix this simply remove the trailing space.
+    </P>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}
