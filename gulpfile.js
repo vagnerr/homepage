@@ -12,6 +12,7 @@ var bootlint        = require('gulp-bootlint');
 var gutil           = require('gulp-util');
 var Crawler         = require('simplecrawler');
 var sh              = require('sync-exec');
+var data            = require('gulp-data');
 
 const fs            = require('fs');
 
@@ -117,10 +118,17 @@ gulp.task('less', function () {
 });
 
 
+function getDataForFile(file) {
+  return {
+    last_modified: get_last_modified(file)
+  };
+}
+
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
   return gulp.src('src/pages/**/*.+(html|nunjucks)')
   // Renders template with nunjucks
+  .pipe(data(getDataForFile))
   .pipe(nunjucks({
       path: ['src/templates']
     }))
@@ -137,14 +145,7 @@ gulp.task('browserSync', function() {
 })
 
 
-
-gulp.task('sitemap', function () {
-  gulp.src('public/**/*.html', {
-    read: false
-  })
-  .pipe(sitemap({
-    siteUrl: 'https://www.vagnerr.com',
-    lastmod: function(file) {
+function get_last_modified(file) {
       // Calculate the source .nunjucks file and
       // query git for the last commit.
       let cwd = file.cwd;
@@ -160,8 +161,19 @@ gulp.task('sitemap', function () {
         console.log( "source file: [" + sourcefile + "] not found for file.relative");
         return null;
       }
-    }
-  }))
+
+};
+
+
+gulp.task('sitemap', function () {
+  gulp.src('public/**/*.html', {
+    read: false
+  })
+  .pipe(sitemap({
+    siteUrl: 'https://www.vagnerr.com',
+    lastmod: function(file) {
+      return get_last_modified(file)
+  }}))
   .pipe(gulp.dest('./public'));
 });
 
