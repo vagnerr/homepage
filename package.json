@@ -22,6 +22,7 @@
     "gulp-util": "^3.0.8",
     "less": "^2.7.2",
     "scp": "0.0.3",
-    "simplecrawler": "^1.1.4"
+    "simplecrawler": "^1.1.4",
+    "sync-exec": "^0.6.2"
   }
 }

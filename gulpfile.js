@@ -9,9 +9,11 @@ var htmlLint        = require('gulp-html-lint');
 var csslint         = require('gulp-csslint');
 var csslintStylish  = require('csslint-stylish');
 var bootlint        = require('gulp-bootlint');
+var gutil           = require('gulp-util');
+var Crawler         = require('simplecrawler');
+var sh              = require('sync-exec');
 
-var gutil = require('gulp-util');
-var Crawler = require('simplecrawler');
+const fs            = require('fs');
 
 var scpconfig = {
   file: 'public/*',
@@ -134,12 +136,31 @@ gulp.task('browserSync', function() {
   })
 })
 
+
+
 gulp.task('sitemap', function () {
   gulp.src('public/**/*.html', {
     read: false
   })
   .pipe(sitemap({
-    siteUrl: 'https://www.vagnerr.com'
+    siteUrl: 'https://www.vagnerr.com',
+    lastmod: function(file) {
+      // Calculate the source .nunjucks file and
+      // query git for the last commit.
+      let cwd = file.cwd;
+      let filedir  = path.dirname(file.relative);
+      let filebase = path.basename(file.relative, path.extname(file.relative));
+      let sourcefile = path.join( cwd, 'src','pages', filedir, filebase + '.nunjucks' )
+
+      if (fs.existsSync(sourcefile)){
+        var cmd = 'git log -1 --format=%cI "' + sourcefile + '"';
+        return sh(cmd).stdout.toString().trim();
+      }
+      else {
+        console.log( "source file: [" + sourcefile + "] not found for file.relative");
+        return null;
+      }
+    }
   }))
   .pipe(gulp.dest('./public'));
 });
