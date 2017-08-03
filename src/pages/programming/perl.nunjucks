@@ -57,7 +57,8 @@
           seti server to display the data already, but I wanted
           to play and not have to browse the site to get the
           stats all the time. I have three scripts at the moment.
-          <dl>
+
+          <dl class="dl-horizontal">
             <dt><a href="getstat.pl">getstat.pl</a></dt>
             <dd>
             Grabs the data for a particular user (by email

@@ -28,15 +28,17 @@
         <dl>
           <dt><a href="https://www.bloodaxe.com/JPS/">JPS</a></dt>
           <dd>
-            <a href="https://www.bloodaxe.com/JPS/">
-              <img align="right" src="https://www.bloodaxe.com/JPS/jpslock.gif" alt="" border="0" width="45" height="56">
-            </a>
-            One major app which I was involved in was the writing of
-            a password protection
-            system that you can implement on free webspace. It is
-            called JPS.
-            <br><br>
-            For further details on this utility you can visit it's <a href="https://www.bloodaxe.com/JPS/">home page.</a>
+            <p>
+              <a href="https://www.bloodaxe.com/JPS/">
+                <img align="right" src="https://www.bloodaxe.com/JPS/jpslock.gif" alt="" border="0" width="45" height="56">
+              </a>
+              One major app which I was involved in was the writing of
+              a password protection
+              system that you can implement on free webspace. It is
+              called JPS.
+            </p><p>
+              For further details on this utility you can visit it's <a href="https://www.bloodaxe.com/JPS/">home page.</a>
+            </p>
           </dd>
           <dt><a href="/games/blitz/">Blitz</a>
           <dd>

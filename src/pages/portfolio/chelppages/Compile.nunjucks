@@ -12,7 +12,7 @@
 <!-- Adds the navigation partial -->
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/navigation.nunjucks' as nav %}
-{{nav.active('programming')}}
+{{nav.active('portfolio')}}
 
   <div class="container-fluid maincontent">
     <div class="row">
@@ -188,9 +188,9 @@
    {
       if (i &lt;= oval)
       {
-     /*Do Something*/
+          /*Do Something*/
       }else{
-           /*Something Else */
+          /*Something Else */
    }</PRE>
   Than it would be in:- <BR><BR>
 

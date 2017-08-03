@@ -12,7 +12,7 @@
 <!-- Adds the navigation partial -->
 <!-- Importing Nunjucks Macro -->
 {% import 'macros/navigation.nunjucks' as nav %}
-{{nav.active('programming')}}
+{{nav.active('portfolio')}}
 
   <div class="container-fluid maincontent">
     <div class="row">
