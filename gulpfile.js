@@ -14,6 +14,8 @@ var Crawler         = require('simplecrawler');
 var sh              = require('sync-exec');
 var data            = require('gulp-data');
 
+var amperize = require('gulp-amperize');
+
 const fs            = require('fs');
 
 var scpconfig = {
@@ -37,7 +39,6 @@ gulp.task('deploy',['sitemap'], function () {  // always rebuild sitemap, just b
 
 
 });
-
 
 gulp.task('checklinks', function(cb) {
 
@@ -133,8 +134,20 @@ gulp.task('nunjucks', function() {
       path: ['src/templates']
     }))
   // output files in app folder
+  //.pipe(amperize())
   .pipe(gulp.dest('public'))
 });
+
+
+gulp.task('amperize', ['nunjucks','static','less'], function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('public/**/*')
+  // Renders template with nunjucks
+  .pipe(amperize())
+  .pipe(gulp.dest('public/amp'))
+});
+
+
 
 gulp.task('browserSync', function() {
   browserSync.init({
