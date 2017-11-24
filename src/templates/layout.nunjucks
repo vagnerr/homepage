@@ -21,9 +21,12 @@
   </head>
   <body class="site">
 
+    <div class="container-fluid banner-header" >
+        <h1>vagnerr.com</h1>
+    </div>
 
-  <!-- You write code for this content block in another file -->
-  {% block content %} {% endblock %}
+    <!-- You write code for this content block in another file -->
+    {% block content %} {% endblock %}
 
 
   </body>
