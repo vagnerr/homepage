@@ -1,16 +1,40 @@
 {% macro active(activePage='home') %}
   <!-- Macro stuff here -->
-
+  <!-- Fade in navbrand when nav bar scrolled to top -->
+  <script id="_bannerscroll">
+    $(document).ready(function() {
+      // not needed.  done as style otherwise it visibly blinks out on page load
+      //$("#navbrand").fadeTo(0,0);
+      var banner_height = 100; // basically our offset should match 'data-offset-top'
+      var lastbanner  = "OUT"
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= banner_height ){
+          if (lastbanner=="OUT"){
+            $("#navbrand").fadeTo('fast',1);
+            lastbanner = "IN";
+          }
+        } else {
+          if (lastbanner=="IN") {
+            $("#navbrand").fadeTo('fast',0);
+            lastbanner = "OUT";
+          }
+        }
+      });
+    });
+  </script>
 <!-- NAVIGATION -->
 <nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="100" >
-  <div class="container-fluid">
+  <div class="container-fluid" id="fullnavbar">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-nav-bar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">vagnerr.com</a>
+      <div id="navbrand" style="opacity:0"> <!--opacity has to be here or JS can't fade in-->
+        <a class="navbar-brand" href="/">vagnerr.com</a>
+      </div>
     </div>
     <div class="collapse navbar-collapse" id="my-nav-bar">
     <ul class="nav navbar-nav">
@@ -33,6 +57,7 @@
     </div>
   </div>
 </nav>
+
 
 
 {% endmacro %}
