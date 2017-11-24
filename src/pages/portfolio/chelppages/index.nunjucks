@@ -1,6 +1,6 @@
 <!-- index.nunjucks -->
 {% extends "layout.nunjucks" %}
-
+{% set title = "C - Help" %}
 {% block content %}
 
 
