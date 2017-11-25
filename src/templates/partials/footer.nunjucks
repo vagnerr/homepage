@@ -3,11 +3,21 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-9">
-            <p class="text-muted"><a href="/feedback.html">P.J.Wise</a></p>
+            <p class="text-muted">
+              <a href="/feedback.html">P.J.Wise</a>&nbsp;&nbsp;
+              <a href="https://github.com/vagnerr"><img src="/img/social/GitHub-Mark-64px.png" class="social-icon" alt="[GH]"></a>
+              <a href="https://www.linkedin.com/in/peterjohnwise/"><img src="/img/social/In-2C-66px.png" class="social-icon" alt="[LI]"></a>
+              <a href="https://stackexchange.com/users/2655/vagnerr?tab=accounts"><img src="/img/social/se-icon.png" class="social-icon" alt="[SE]"></a>
+              <a href="https://www.flickr.com/photos/vagnerr/"><img src="/img/social/flikr.png" class="social-icon" alt="[SE]"></a>
+              <a href="https://twitter.com/vagnerr"><img src="/img/social/twitter.png" class="social-icon" alt="[SE]"></a>
+
+            </p>
             <p class="text-muted text-small">Last modified: {{ last_modified }}</p>
           </div>
           <div class="col-xs-3  text-right">
-            <img src="/img/footer_icon.jpg" class="img-circle footer-icon" alt="/\">
+
+                <img src="/img/footer_icon.jpg" class="img-circle footer-icon" alt="/\">
+
           </div>
         </div>
       </div>
