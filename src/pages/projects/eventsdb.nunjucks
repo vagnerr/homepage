@@ -20,14 +20,13 @@
           When at university I used to run a Star Trek/Sci-Fi
           Conventions Diary (only now visible through the
           <a href="https://web.archive.org/web/19980516044107/alethea.ukc.ac.uk/SU/Societies/StarTrek/Conventions/">
-            wayback machine
-          </a>.
-          It was popular and I plan to rebuild it. Only properly
+            wayback machine</a>.
+          It was popular and I would like to rebuild it. Only properly
           this time, using the experience I have gained over
           the years. It is at the design stage right now as I
           am trying to use it as a project to apply UML and
           Rational design methodologies to. I already have
-          a reasonably stable Database design and Case diagrams
+          a reasonably stable Database design and Use Case diagrams
           and it is being designed in such a way that it is
           totally generic allowing the same code and DB structure
           to be dropped into 3 different events websites

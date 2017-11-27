@@ -17,11 +17,23 @@
         <!-- PAGE CONTENT -->
         <h1>Makelive</h1>
         <p>
+          When I was originaly working on this there were very few options.
+          CI/CD wasn't really a thing. We were all writing our own tools
+          for the task. Now you have tools like <a href="travis-ci.org">Travis CI</a>,
+          <a href="https://www.visualstudio.com/team-services/">Visual Studio Team Services</a>,
+          <a href="https://jenkins.io/">Jenkins</a>, <a href="https://gulpjs.com/">Gulp</a>,
+          and many many others I have no real need to be writing my own at this point :-). In fact
+          this homepage has been developed using <a href="https://github.com/vagnerr/homepage">Gulp</a>
+
+        </p>
+
+        <p><del>
           I am working on a website release system based loosely
           on a system that we used to use on the first student
-          run web server at my University.
+          run web server at my University.</del>
         </p>
         <p>
+          <del>
           The idea of this system is to allow someone
           to have a mirror of a live website to develop on
           rather than working directly with the live server.
@@ -44,6 +56,7 @@
           in early revisions themselves. I hope to be able to
           place all or perhaps part of the system on CPAN once
           it is complete.
+        </del>
         </p>
       </div>
     </div>

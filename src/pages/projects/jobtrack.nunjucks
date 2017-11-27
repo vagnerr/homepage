@@ -20,16 +20,10 @@
           so I wrote a fully functional job tracking system with
           PHP and MySQL. It has full cross-referencing of Agencies
           and Agents with Jobs and notes. Plus the storage of the
-          job adverts and source where appropriate. It is
-          currently functional and in final test. You can find
-          more details of the project on
-          <a href="https://sourceforge.net/projects/jobtrack/">
-            SourceForge</a>.
-          It will have its first release shortly but until then
-          all the code is available in the
-          <a href="https://cvs.sourceforge.net/viewcvs.py/jobtrack">
-            CVS Repository</a>.
-
+          job adverts and source where appropriate.
+          All the code is available in
+          <a href="https://github.com/vagnerr/jobtrack">
+            GitHub <img src="/img/social/GitHub-Mark-64px.png" class="social-icon" alt="[GH]"></a>.
         </p>
 
       </div>
