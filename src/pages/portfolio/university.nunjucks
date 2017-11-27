@@ -16,27 +16,40 @@
         <!-- PAGE CONTENT -->
         <h1>University</h1>
         <p>
-          I spent six years at university, both as an
-          undergraduate, and a postgraduate. Here is some
-          of the stuff I got up to.
+          I spent six years at <a href="https://www.kent.ac.uk/">The University of Kent at Canterbury</a>, both as an
+          undergraduate ( studying Computer Science through Electronics ), and a postgraduate ( in Medical Electronics ).
         </p>
         <dl>
-          <dt>C classes</dt>
+          <dt>Postgraduate Research <img src="/img/ECG5.svg" width="35" height="20"></dt>
           <dd>
-I got to earn a little money whilst I was doing Ph.D. research (in Medical
-Electronics) supervising C classes for the second year electronics
+              I was researching a replacement
+              for 24 hour ambulatory monitoring, also known as <a href="https://en.wikipedia.org/wiki/Holter_monitor">Holter Monitoring</a>
+              with a realtime analysis system. I was looking at two approaches. The first involved simple band pass filtering to
+              identify the individual components
+              of an ECQ ( P, QRS, and T waves) in order to make clinical measurements and record abnormal traces. I then compared that
+              with n-tuple nural networks
+              specifically trained from a library of "normal" and "abnormal" ECG recordings. A combination of the two techniques could then be used to
+              identify and record only the interesting ECG traces rather than the full 24hours of data.
+              <a href="https://github.com/vagnerr/ECGHolterMonitor">
+                The code is available on GitHub
+                <img src="/img/social/GitHub-Mark-64px.png" class="social-icon" alt="[GH]">
+              </a>
+          </dd>
+          <dt>C Classes</dt>
+          <dd>
+I got to earn a little money whilst I was doing my Ph.D. research supervising C classes for the second year electronics
 undergraduates. They were using new editor tools on a new operating system
-(the *new* Windows NT had just been deployed across the site), and that had
+(the <strong>new</strong> Windows NT had just been deployed across the site), and that had
 caused many teething troubles. So I produced some
 <a href="chelppages/index.html">help pages</a> to assist the students.
 It is provided here more as a curiosity, although if you are trying to
 use a windows c compiler with PFE it might be helpful to you. :-)
           </dd>
-          <dt>Star Trek Society</dt>
+          <dt>Star Trek Society <img src="/img/tngcomunicator.gif"></dt>
           <dd>
 Throughout my time at University I was on the Committee of the Star Trek
 Society (Founding Committee Member in fact). I was Secretary, and when some
-group of physicists invented the World Wide Web (apparently), I also took
+bright sparks invented the World Wide Web, I also took
 on the responsibility of Webmaster for the society home pages. Alas the
 website is no more as the web server in question was taken down a number of
 years ago. However you can still view the old pages via the trusty
@@ -44,13 +57,8 @@ years ago. However you can still view the old pages via the trusty
 <br><br>
 Possibly the best part of the site was
 <a href="https://web.archive.org/web/19990204024946/alethea.ukc.ac.uk/SU/Societies/StarTrek/Conventions/">The UK Convention Diary</a>
-that I administered. It would seem that it had become the definitive resource
-if you wanted to go to a Star Trek or Sci-Fi Convention in the UK, and
-apparently still is, which is unfortunate as the server no longer exists.
-However I have plans to build a new one, and its going to be bigger and
-better. So watch this space. And if you come across anyone else trying to
-link to the old location on alethea.ukc.ac.uk then tell them to watch this
-space as well.
+that I administered. It would seem that at the time it had become the definitive resource
+if you wanted to go to a Star Trek or Sci-Fi Convention in the UK. So it  is unfortunate that the server no longer exists.
           </dd>
         </dl>
 
