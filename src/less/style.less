@@ -3,6 +3,12 @@
 @banner_heighto: 100;
 @footer_height: 60px;
 
+@background_blur: 3px;
+@background_brightness: 100%;
+@background_contrast: 100%;
+@background_opacity: 30%;
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -94,4 +100,24 @@ body > .container {
 
 code {
   font-size: 80%;
+}
+
+
+body::before {
+  background: url(/img/savernakestags.jpg) no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  -webkit-filter: blur(@background_blur) brightness(@background_brightness) contrast(@background_contrast) opacity(@background_opacity);
+  -moz-filter: blur(@background_blur) brightness(@background_brightness) contrast(@background_contrast) opacity(@background_opacity);
+  -o-filter: blur(@background_blur) brightness(@background_brightness) contrast(@background_contrast) opacity(@background_opacity);
+  -ms-filter: blur(@background_blur) brightness(@background_brightness) contrast(@background_contrast) opacity(@background_opacity);
+  filter: blur(@background_blur)  brightness(@background_brightness) contrast(@background_contrast) opacity(@background_opacity);
 }
