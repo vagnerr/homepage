@@ -17,7 +17,14 @@
         <!-- PAGE CONTENT -->
         <h1>Mine Sweeper</h1>
         <h2>Applet</h2>
-          ... needs java browser plugin...
+        <p>
+          ... needs java browser plugin...</p>
+          <p>
+             However considering the security
+          flaws in java it is perfectly acceptable to not install/enable Java
+          in your browser these days. Simply check the code and laugh at how
+          we used to do interactive websites back in the 90's :)
+        </p>
           <applet code=MineSweep.class codebase="./" width=350 height=350>
           </applet>
         <h2>The Source</h2>

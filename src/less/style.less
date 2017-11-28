@@ -124,3 +124,64 @@ body::before {
   z-index: -1;
 
 }
+
+
+// Thanks to https://github.com/Kaiyuan/bootstrap.footnotes.js / https://codepen.io/Kaiyuan/pen/CGnhj
+// Currently beeing used (abused?) on globalthermonuclearwar.nunjucks page
+/* sup */
+sup {
+  vertical-align: super;
+  width: 19px;
+  height: 10px;
+  display: inline-block;
+  text-align: center;
+  text-indent: -9999px;
+  direction: ltr;  // stops lint complaining about -ve text-indent
+  -webkit-font-smoothing:antialiased;
+  background: #fff url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjQsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9InN1cCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxMDcuNzIxcHgiIGhlaWdodD0iNTYuNjg5cHgiIHZpZXdCb3g9IjAgMCAxMDcuNzIxIDU2LjY4OSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTA3LjcyMSA1Ni42ODkiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iIzIyMjIyMiIgZD0iTTEwNy43MTcsNTYuNjkzSDBWMGgxMDcuNzE3VjU2LjY5M3ogTTUzLjg1OCwxOS44NDNjLTQuNjk3LDAtOC41MDQsMy44MDgtOC41MDQsOC41MDMNCgljMCw0LjY5NywzLjgwOCw4LjUwNSw4LjUwNCw4LjUwNWM0LjY5NiwwLDguNTA0LTMuODA4LDguNTA0LTguNTA1QzYyLjM2MiwyMy42NTEsNTguNTU0LDE5Ljg0Myw1My44NTgsMTkuODQzeiBNODIuMzU4LDE5Ljg0Mw0KCWMtNC42OTYsMC04LjUwNSwzLjgwOC04LjUwNSw4LjUwM2MwLDQuNjk3LDMuODA5LDguNTA1LDguNTA1LDguNTA1czguNTA0LTMuODA4LDguNTA0LTguNTA1DQoJQzkwLjg2MiwyMy42NTEsODcuMDU0LDE5Ljg0Myw4Mi4zNTgsMTkuODQzeiBNMjUuMzU4LDE5Ljg0M2MtNC42OTYsMC04LjUwNCwzLjgwOC04LjUwNCw4LjUwM2MwLDQuNjk3LDMuODA4LDguNTA1LDguNTA0LDguNTA1DQoJczguNTAzLTMuODA4LDguNTAzLTguNTA1QzMzLjg2MiwyMy42NTEsMzAuMDU0LDE5Ljg0MywyNS4zNTgsMTkuODQzeiIvPg0KPC9zdmc+DQo=) no-repeat center center;
+  background-size: cover;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 1px 1px rgba(255,255,255,.2);
+}
+.sup-box {
+  background: #fff;
+  border-radius: 6px;
+  border: 2px solid #000;
+  box-shadow: 0 1px 5px rgba(0,0,0,.3);
+  max-height: 120px;
+  max-width: 220px;
+  padding: 10px;
+  position: absolute;
+  vertical-align: middle;
+  width: auto;
+  word-wrap:break-word;
+  z-index: 100;
+}
+.sup-box:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid #000;
+  border-color: rgb(100, 100, 100) #000 #000 rgb(100, 100, 100);
+  z-index: 99;
+  position: absolute;
+  bottom: -6px;
+  margin-left: -6px;
+  left: 50%;
+  box-shadow: 2px 2px 3px rgba(0,0,0,.1);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+/* sup end */

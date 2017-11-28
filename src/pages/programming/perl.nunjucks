@@ -16,17 +16,11 @@
         <!-- PAGE CONTENT -->
         <h1>Perl</h1>
         <p>
-          I have been using Perl now for over 10 years, since a University
-          friend gave me a quick intro into how useful it can be.
+          My experience in Perl can be measured in decades, since a University
+          friend gave me a quick introduction into how useful it can be.
         </p>
         <dl>
-          <dt><a href="/projects/makelive.html">Makelive</a></dt>
-          <dd>
-          I am working on a website release system based loosely
-          on a system that we used to use on the first student run
-          web server at my University. More details on my progress
-          can be found <a href="/projects/makelive.html">here</a>.
-          </dd>
+
           <dt><a href="/projects/parse-webcounter.html">
             Parse::WebCounter
             </a>
@@ -38,20 +32,23 @@
 
 
           </dd>
-          <dt>Seti</dt>
+          <dt>SETI@home</dt>
           <dd>
-          I have a number of machines in my home network and the
-          spare CPU cycles are currently dedicated to the
+          I used to have a number of machines in my home network and the
+          spare CPU cycles were dedicated to the
           <a href="http://www.setiathome.ssl.berkeley.edu/">
-            Seti Project
+            SETI Project
           </a>.
           Obviously being involved in that is all about the stats
-          so I have written a number of simple Perl scripts to
+          so I had written a number of simple Perl scripts to
           extract current user and group stats from the XML feeds
           that the seti server supplies. There are pages on the
           seti server to display the data already, but I wanted
           to play and not have to browse the site to get the
           stats all the time. I have three scripts at the moment.
+
+          Sadly the API is no longer available so they no longer
+          do anything :-{
 
           <dl class="dl-horizontal">
             <dt><a href="getstat.pl">getstat.pl</a></dt>

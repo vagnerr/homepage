@@ -17,10 +17,18 @@
         <!-- PAGE CONTENT -->
         <h1>Parse::WebCounter</h1>
         <p>
-          The Current version is <a href="Parse-WebCounter-0.02.tar.gz">0.02</a>
+            This Module parses web counter images using GD and supplies the numeric
+            value represented by the image. Useful if you have a cron keeping
+            track of the number of hits you are getting per day and you don't
+            have real logs to go by. You will need copies of the images
+            representing the individual digits, or a strip of all of them for
+            it to compare to as the module is not very bright it does a simple
+            image comparison as apposed to any sophisticated image analysis
+            (This is not designed, nor intended to be a Captcha solver)
         </p>
         <p>
-          You can also check the <a href="Parse-WebCounter-README.txt">README</a>
+          This is available via <a href="https://metacpan.org/pod/Parse::WebCounter">CPAN</a>
+          and the source is on <a href="https://github.com/vagnerr/parse-webcounter">GitHub <img src="/img/social/GitHub-Mark-64px.png" class="social-icon" alt="[GH]"></a>
         </p>
       </div>
     </div>

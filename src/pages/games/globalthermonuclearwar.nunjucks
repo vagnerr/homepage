@@ -18,14 +18,38 @@
         <h1>Global Thermonuclear War</h1>
         <p>
           <a href="https://www.amazon.co.uk/exec/obidos/ASIN/B00004TT7C/theloonybin0e">
-            WOULDN'T YOU PREFER A NICE GAME OF CHESS?
-          </a>
+            WOULDN'T YOU PREFER A NICE GAME OF CHESS?</a>
+            <sup data-text="Was funier when website was http://wopr.demon.co.uk/">1</sup>
         </p>
+
 
       </div>
     </div>
+
   </div>
 
+  <script>
+        // Thanks to https://github.com/Kaiyuan/bootstrap.footnotes.js / https://codepen.io/Kaiyuan/pen/CGnhj
+        $('sup').hover(
+        function () {
+          var suptext = $(this).data("text");
+          $("body").append('<div class="sup-box">'+suptext+'</div>' );
+          var sbox = $('.sup-box');
+          var supx = $(this).offset().left;
+          var supy = $(this).offset().top;
+          var supw = $(this).outerWidth();
+          var boxx = sbox.outerWidth();
+          var boxy = sbox.outerHeight();
+          sbox.css('left', supx+supw/2-boxx/2);
+          sbox.css('top', supy-boxy-8);
+          sbox.hide();
+          sbox.fadeIn("fast");
+        },
+        function () {
+          $('.sup-box').detach();
+        }
+      );
+      </script>
 
 <!-- Adds the footer partial -->
 {% include "partials/footer.nunjucks" %}
