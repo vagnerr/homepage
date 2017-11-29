@@ -40,8 +40,7 @@
     <ul class="nav navbar-nav">
       <li{%if activePage == 'home' %} class="active"{% endif %}><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       <li class="dropdown{%if activePage == 'programming' %} active{% endif %}">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="/programming/">Programming
-        <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="/programming/">Programming<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/programming/perl.html">Perl</a></li>
           <li><a href="/programming/php.html">PHP</a></li>
@@ -50,7 +49,14 @@
           <li><a href="/games/">Games</a></li>
         </ul>
       </li>
-      <li{%if activePage == 'portfolio' %} class="active"{% endif %}><a href="/portfolio/">Portfolio</a></li>
+      <li{%if activePage == 'portfolio' %} class="active"{% endif %}>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="/portfolio/">Portfolio<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="/portfolio/university.html">University</a></li>
+            <li><a href="/portfolio/work.html">Work</a></li>
+            <li><a href="/portfolio/cv.html">CV</a></li>
+          </ul>
+      </li>
       <li{%if activePage == 'projects' %} class="active"{% endif %}><a href="/projects/">Projects</a></li>
       <li{%if activePage == 'contact' %} class="active"{% endif %}><a href="/feedback.html"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
     </ul>
