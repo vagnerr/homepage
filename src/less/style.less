@@ -7,6 +7,8 @@
 @background_brightness: 100%;
 @background_contrast: 100%;
 @background_opacity: 30%;
+@navbar_height: 50px;
+@navbar_padding: @navbar_height + 20px;
 
 
 /* Sticky footer styles
@@ -57,11 +59,30 @@ dd {
 --------------------------------------------------- */
 .affix {
   top: 0;
-  width: 100%;
+
 }
+.navbar {
+  width: 100%; // allways 100% why would we want anything else?
+}
+//.affix
+
 
 .affix + .container-fluid {
-  padding-top: 70px;
+  padding-top: @navbar_padding;
+  //background-color: red; // Just to highlight target active
+}
+
+.sidenav {
+  top: @navbar_padding;
+  //background-color: orange;  // Just to highlight target
+}
+// if the screen is too small drop the side nav
+// it looks a bit odd when its above the content and
+// does wierd stuff when .affix fires
+@media screen and (max-width: 800px) {
+  #sidenav {
+      display: none !important;
+  }
 }
 
 
@@ -102,6 +123,13 @@ code {
   font-size: 80%;
 }
 
+// http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/  Method B
+.anchtarget::before {
+  display: block;
+  content: "";
+  height: @navbar_height;
+  margin: -@navbar_height 0 0;
+}
 
 body::before {
   background: url(/img/savernakestags.jpg) no-repeat center center fixed;
@@ -185,3 +213,4 @@ sup {
   transform: rotateZ(45deg);
 }
 /* sup end */
+

@@ -1,0 +1,17 @@
+<script>
+    // Adjusts "with" of sidenav on .affix so it remains
+    // constant during scroll
+    //Applied affix to sidebar class
+    $('.sidenav').on('affix.bs.affix',function(){
+          setAffixContainerSize();
+      });
+
+      /*Setting the width of the sidebar (I took 10px of its value which is the margin between cols in my Bootstrap CSS*/
+      function setAffixContainerSize(){
+          $('.sidenav').width($('.sidenav').parent().innerWidth()-30);
+      }
+
+      $(window).resize(function(){
+          setAffixContainerSize();
+      });
+</script>

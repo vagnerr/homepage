@@ -24,7 +24,7 @@
     });
   </script>
 <!-- NAVIGATION -->
-<nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="100" >
+<nav class="navbar navbar-inverse navbar-static-top nav-upper" data-spy="affix" data-offset-top="100" >
   <div class="container-fluid" id="fullnavbar">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-nav-bar">
