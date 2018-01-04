@@ -26,7 +26,15 @@ var scpconfig = {
   path: '/home/peter/www/dev.vagnerr.com/docroot'
 }
 
-gulp.task('deploy',['sitemap'], function () {  // always rebuild sitemap, just before deploying
+var scpconfig_live = {
+  file: 'public/*',
+  user: 'peter',
+  host: 'ziggy.vagnerr.com',
+  port: 22,
+  path: '/home/peter/www/vagnerr.com/docroot'
+}
+
+gulp.task('deploy',['nunjucks','static','less','sitemap'], function () {  // always rebuild, just before deploying
 
   // using scp directly rather than gulp-scp as gulp-scp
   // doesnt properly handle the recursive file structure
@@ -40,6 +48,21 @@ gulp.task('deploy',['sitemap'], function () {  // always rebuild sitemap, just b
 
 });
 
+
+gulp.task('deploy_to_live',['nunjucks','static','less','sitemap'], function () {  // always rebuild, just before deploying
+
+    // using scp directly rather than gulp-scp as gulp-scp
+    // doesnt properly handle the recursive file structure
+    // NOTE: this does NOT remove files from the remote server
+    //       will neeed to switch to using rsync in future.
+    scp.send( scpconfig_live, function (err) {
+      if (err) console.log(err);
+      else console.log('Files transferred.');
+    })
+
+
+  });
+
 gulp.task('checklinks', function(cb) {
 
   var last_referrer="";
@@ -47,8 +70,10 @@ gulp.task('checklinks', function(cb) {
   var offsite_links = {};
   var redirect_links = {};
 
+//  var crawler = Crawler("https://www.vagnerr.com/")     //<---------------TODO: PARAMETERISE?
   var crawler = Crawler("http://localhost:3000/")     //<---------------TODO: PARAMETERISE?
-    .on("fetchcomplete", function (queueItem, response) {
+
+  .on("fetchcomplete", function (queueItem, response) {
         if ( queueItem.host != crawler.host ) {
           //gutil.log("Offsite>>: " + queueItem.url);
           offsite_links[queueItem.url] = queueItem.referrer;
