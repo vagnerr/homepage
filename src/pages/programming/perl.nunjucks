@@ -21,6 +21,20 @@
         </p>
         <dl>
 
+
+          <dt>Salter MiBody - BODYDATA.TXT parsing</dt>
+          <dd>
+            Their desktop app is poor, and obviously windows only. <sup data-text="It might run under wine. It is reliant on the USB subystem though">1</sup>
+            I wanted a more flexible solution for just reading the data into a database, maybe even
+            into google fit. On the plus side the scales write a file onto a USB stick with a standard
+            FAT filesystem so grabbing the BODYDATA.TXT was nice and simple. However their "TXT" file
+            is actually binary data. I did try contact them asking for a spec but was declined. So I
+            did some research and reverse-engineered the format. I have a working prototype
+            <a href="https://github.com/vagnerr/mibody">on GitHub <img src="/img/social/GitHub-Mark-64px.png" class="social-icon" alt="[GH]"></a>
+            that reads and displays the content allong with some of the calculated values such as BMI.
+            I might make a proper CPAN module at some point. <sup data-text="... or maybe a Raspbery PI directly attached pretending to be a USB stick... :-)">1</sup>
+          </dd>
+
           <dt><a href="/projects/parse-webcounter.html">
             Parse::WebCounter
             </a>
@@ -29,9 +43,9 @@
             A simple perlmodule that can read back the value
             of a standard graphical webcounter. More detail
             can be found <a href="/projects/parse-webcounter.html">here</a>.
-
-
           </dd>
+
+
           <dt>SETI@home</dt>
           <dd>
           I used to have a number of machines in my home network and the
@@ -83,6 +97,7 @@
       </div>
     </div>
   </div>
+  {% include "partials/superscript_popup.nunjucks" %}
 
 
 <!-- Adds the footer partial -->

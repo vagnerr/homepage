@@ -16,13 +16,8 @@
         <!-- PAGE CONTENT -->
         <h1>CV</h1>
         <p>
-          The current version of my CV is 4.3.
-          You can download it here.
-        </p>
-        <ul>
-          <li><a href="CV4_3-L.doc">MS Word</a>
-          <li><a href="CV4_3-L.txt">Text</a>
-        </ul>
+          The current version of my CV is 5.7.
+          You can download it <a href="CV5_7-L.doc">here</a>
         </p>
 
       </div>

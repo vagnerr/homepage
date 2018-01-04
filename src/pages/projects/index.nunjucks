@@ -12,11 +12,16 @@
   <div class="container-fluid maincontent">
     <div class="row">
       <div class="col-md-12">
-        <h1>Current Projects</h1>
-        <p>
-        The projects listed here are the ones that I am
-        currently working on.
-        </p>
+        <h1>Project(s)</h1>
+        <h3>Current</h3>
+        <dl>
+          <dt><a href="archeryaid.html">Archery Aid</a></dt>
+          <dd>
+            Android app for recording scores, calculating handicaps, and counting arrows.
+          </dd>
+        </dl>
+        <h3>In the Attic</h3>
+
         <dl>
           <dt><a href="makelive.html">Makelive</a></dt>
           <dd>

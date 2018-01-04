@@ -1,0 +1,44 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+<!-- Adds the navigation partial -->
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/navigation.nunjucks' as nav %}
+{{nav.active('projects')}}
+
+  <div class="container-fluid maincontent">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- PAGE CONTENT -->
+        <h1>Archery Aid</h1>
+        <p>
+            I am developing an Android app for recording my archery performance
+            including scores, handicaps, and counting arrows shot. There are
+            some good ones already on the market, but this one will be mine.
+            I am hoping to combine some of the features that I like in other apps
+            and add some new ones of my own. I am also
+            looking for the right features for an Android Wear component
+            as I think it would be usefull for recording scores quickly
+            at the boss rather than having to carry your phone on the shooting line.
+            <sup data-text="... that and it's a justification for buying myself a gadget watch... for testing purposes :-)">1</sup>
+
+        </p>
+        <p>
+          Will be build mostly in Java, though I am using the project for getting
+          some experience in Kotlin as well.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {% include "partials/superscript_popup.nunjucks" %}
+
+<!-- Adds the footer partial -->
+{% include "partials/footer.nunjucks" %}
+
+
+
+{% endblock %}

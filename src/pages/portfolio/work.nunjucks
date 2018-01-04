@@ -29,43 +29,75 @@
 
           <div id="Pirum" class="anchtarget">
               <h1>Pirum Systems</h1>
-            <p>
-                Nulla ad incididunt occaecat laboris eu irure anim occaecat in esse et irure quis consequat. Est anim eu culpa officia mollit sit in. Est excepteur commodo culpa qui cillum. Nulla id deserunt culpa pariatur aliqua ut fugiat consequat fugiat ullamco tempor velit do. Fugiat cupidatat dolore officia exercitation adipisicing amet fugiat dolor do pariatur aliquip labore.
+    <dl>
+      <dt>Datacentre Move</dt>
+      <dd>
+          Due to notification of early termination of lease in our datacenter (they were
+          decomissioning the building and so everyone was asked to leave).
+          We needed to relocate our production infrastructure without interrupting client service.
+          In less than 3 months we completed a fitout of new racks of equipment in geographically
+          separate datacentres, with high speed divergent links for synchronisation. Even though
+          we were remaining with the same ISP, the location change required a new allocation
+          of IP addresses. This was a logistical issue as many clients had strict firewall rules
+          for service access. Because of this significant resource had to be expended to ensure
+          that everyone was notified and prepared for the IP switchover. To avoid the IP
+          change issue in the future we became a member of RIPE, obtaining our own IP allocations for
+          IPv4 and IPv6, and setup <a href="https://bgp.he.net/AS200008#_graph4">BGP peering</a> with multiple upstream service providers out of both
+          physical sites for maximum redundancy.
 
-      Ut officia non ipsum qui Lorem. In ex cupidatat sunt cillum laboris id fugiat mollit ex proident cillum dolor. Qui ipsum labore mollit enim cillum culpa sint laboris ut ut. Est anim et enim laborum ipsum anim fugiat et. Amet excepteur et velit aliqua excepteur adipisicing reprehenderit aute occaecat enim duis ullamco sunt sint. Id magna nostrud ex excepteur irure.
+      </dd>
+      <dt>Firewall Upgrades</dt>
+      <dd>
 
-      Duis reprehenderit nulla deserunt quis veniam cillum do veniam irure anim officia reprehenderit. Commodo ut laboris nulla consequat officia nulla ea commodo. Ad amet commodo esse sint nostrud et elit duis. Magna aliqua officia exercitation commodo do eiusmod culpa magna duis aliquip aliqua.
-    </p>
-    <p>
-        Nulla ad incididunt occaecat laboris eu irure anim occaecat in esse et irure quis consequat. Est anim eu culpa officia mollit sit in. Est excepteur commodo culpa qui cillum. Nulla id deserunt culpa pariatur aliqua ut fugiat consequat fugiat ullamco tempor velit do. Fugiat cupidatat dolore officia exercitation adipisicing amet fugiat dolor do pariatur aliquip labore.
-
-Ut officia non ipsum qui Lorem. In ex cupidatat sunt cillum laboris id fugiat mollit ex proident cillum dolor. Qui ipsum labore mollit enim cillum culpa sint laboris ut ut. Est anim et enim laborum ipsum anim fugiat et. Amet excepteur et velit aliqua excepteur adipisicing reprehenderit aute occaecat enim duis ullamco sunt sint. Id magna nostrud ex excepteur irure.
-
-Duis reprehenderit nulla deserunt quis veniam cillum do veniam irure anim officia reprehenderit. Commodo ut laboris nulla consequat officia nulla ea commodo. Ad amet commodo esse sint nostrud et elit duis. Magna aliqua officia exercitation commodo do eiusmod culpa magna duis aliquip aliqua.
-</p>
+        Security requirements of handling financial data called for complex firewall configurations.
+        This was quite difficult to maintain and tune by hand ( several thousand rules on each firewall).
+        I built a tool that would read from a more human readable higher level
+        configuration written in yaml, and calculate all the iptables rules required to meet the
+        specification automatically. The rules would be custom
+        built for each firewall in the infrastructure considering the network topology, and would
+        consolidate duplicate rules, structuring the iptables chains to make the firewall decisions
+        operate in as efficient a manner as possible. Future changes to firewall requirements then
+        became a one or two line change to simple logical config rather than a deep dive into multiple iptables
+        init scripts.
+      </dd>
+    </dl>
 
 </div>
 
         <div id="BBC"  class="anchtarget">
-          <h1>BBC</h1>
+          <h1>BBC / Siemens</h1>
           <p>
-              Nulla ad incididunt occaecat laboris eu irure anim occaecat in esse et irure quis consequat. Est anim eu culpa officia mollit sit in. Est excepteur commodo culpa qui cillum. Nulla id deserunt culpa pariatur aliqua ut fugiat consequat fugiat ullamco tempor velit do. Fugiat cupidatat dolore officia exercitation adipisicing amet fugiat dolor do pariatur aliquip labore.
 
-    Ut officia non ipsum qui Lorem. In ex cupidatat sunt cillum laboris id fugiat mollit ex proident cillum dolor. Qui ipsum labore mollit enim cillum culpa sint laboris ut ut. Est anim et enim laborum ipsum anim fugiat et. Amet excepteur et velit aliqua excepteur adipisicing reprehenderit aute occaecat enim duis ullamco sunt sint. Id magna nostrud ex excepteur irure.
-
-    Duis reprehenderit nulla deserunt quis veniam cillum do veniam irure anim officia reprehenderit. Commodo ut laboris nulla consequat officia nulla ea commodo. Ad amet commodo esse sint nostrud et elit duis. Magna aliqua officia exercitation commodo do eiusmod culpa magna duis aliquip aliqua.
   </p>
-  <p>
-      Nulla ad incididunt occaecat laboris eu irure anim occaecat in esse et irure quis consequat. Est anim eu culpa officia mollit sit in. Est excepteur commodo culpa qui cillum. Nulla id deserunt culpa pariatur aliqua ut fugiat consequat fugiat ullamco tempor velit do. Fugiat cupidatat dolore officia exercitation adipisicing amet fugiat dolor do pariatur aliquip labore.
+  <dl>
+    <dt>Borg 2</dt>
+    <dd>
+      The Borg is the primary ingest and delivery system for all content made available on the
+      BBC website. It offers a standard ftp interface to staff and automated systems, and ensures
+      that what is uploaded is distributed to the appropriate servers for the content type. I was
+      part of the team involved in rolling out this new release, working on bug fixes and
+      feature requests.
+    </dd>
+    <dt>Project Ripcord</dt>
+    <dd>
+      The BBC had a requirement to automatically
+      Blank<sup data-text="Replace the audio of the live broadcast with a recorded message stating 'For copyright reasons this program is not available'">1</sup>
+      any programming mentioning the Olympics as the BBC only had streaming rights for the UK.
+      Normally this would actually be scheduled in and our media selector hardware would
+      switch from the live radio feed to a pre-recorded minidisk. However this could only
+      be for planned events. It also needed to happen if a live conversation switched to
+      an Olymipcs topic<sup data-text="Yes, it was that strict, you dont mess with the IOC">2</sup>
+      The requirement for a "Big red button" came to us 1 week before the 2004 Olympics.
+      In 4 days I designed, built, tested and deployed an integration into the existing
+      media switching system that would, on request switch a channel to a blanking message,
+      prevent any sheduled switch, while maintaining that switching state, in order to
+      restore back to which ever feed input had been requested.
 
-Ut officia non ipsum qui Lorem. In ex cupidatat sunt cillum laboris id fugiat mollit ex proident cillum dolor. Qui ipsum labore mollit enim cillum culpa sint laboris ut ut. Est anim et enim laborum ipsum anim fugiat et. Amet excepteur et velit aliqua excepteur adipisicing reprehenderit aute occaecat enim duis ullamco sunt sint. Id magna nostrud ex excepteur irure.
+    </dd>
+  </dl>
 
-Duis reprehenderit nulla deserunt quis veniam cillum do veniam irure anim officia reprehenderit. Commodo ut laboris nulla consequat officia nulla ea commodo. Ad amet commodo esse sint nostrud et elit duis. Magna aliqua officia exercitation commodo do eiusmod culpa magna duis aliquip aliqua.
-</p>
 </div>
 
-
-        <!-- PAGE CONTENT -->
         <div id="NetInvest" class="anchtarget">
         <h1>NetInvest</h1>
         <p>
@@ -83,25 +115,6 @@ still have it of course and it is reproduced
 <a href="ecommercesecurity.html">here</a> for your amusement. If anyone
 did see it, I would love to know I got published (well kind
 of anyway :-) ).      </dd>
-          <dt>InterShop</dt>
-          <dd>
-I built the original extension for InterShop 3 to integrate it with the
-NetBanx payment system. I also built the NetBanx cartridges for InterShop4
-and InterShop4-ePages. Along with the corresponding NetBanx server code.
-I also got to visit the InterShop engineers at their headquarters in Jena -
-Germany which was an enjoyable experience as well as a rewarding one.
-          <dd>
-
-          <dt>PremiumNet/TeleBanx</dt>
-          <dd>
-I took part in the original research and development of the PremiumNet
-premium rate Internet access system. I was involved in the initial build
-of the client dialler (built with Borland C++). I installed and made
-appropriate modifications to the Unix RADIAS server, tied it into our web
-based administration/statistics server (written in Perl using a MySQL
-backend), and produced some web server mod_perl authentication modules to
-help facilitate simplified integration into 3rd party web servers.
-          </dd>
           <dt>Sexclub</dt>
           <dd>
 I worked on the original build of Paul Raymonds Sexclub. Installing the
@@ -111,27 +124,12 @@ for the project. See the <a href="/games/index.html">Games page</a> for
 more details.
           </dd>
         </dl>
-        Nulla sit irure exercitation nisi nulla laboris Lorem ipsum deserunt aute ex cupidatat sunt. Consequat Lorem sit aute nostrud laborum non. Dolor irure occaecat nisi sunt eiusmod nulla ea. Ea et voluptate nisi quis. Dolore sunt velit nostrud magna nostrud commodo nostrud quis quis aute. Nostrud proident aliqua exercitation occaecat laborum nostrud nostrud excepteur eu anim mollit.
-
-Laboris incididunt minim ullamco ipsum consequat sunt veniam irure adipisicing irure culpa consectetur Lorem voluptate. Id officia id qui sit aliqua amet et sunt ea ad consectetur proident mollit. Duis aute nostrud mollit anim aute amet in tempor aliqua tempor non cillum ea.
-
-Fugiat et fugiat duis ea. Amet cillum aliqua excepteur consequat cupidatat id sunt. Aliqua est ut consequat velit. Tempor in aliqua excepteur amet non nisi ipsum tempor.
-
-Consectetur nulla occaecat labore nostrud ullamco cillum Lorem elit anim aliquip enim. Exercitation nulla qui ipsum irure sunt qui Lorem consequat amet exercitation. Dolor duis duis nulla excepteur culpa nostrud culpa laboris incididunt. Dolor et quis mollit nisi sunt labore pariatur esse dolor exercitation magna. Cillum mollit dolor consectetur laboris amet labore aute velit aliqua consectetur quis magna. Cupidatat qui proident veniam cillum pariatur laboris sit veniam cupidatat id culpa cupidatat reprehenderit. Deserunt elit officia aliquip culpa.
-
-Ad id in labore non ad eiusmod elit et irure ipsum. Adipisicing cupidatat labore ea reprehenderit pariatur sint voluptate. Fugiat sit laborum ad et fugiat non reprehenderit non est laboris aute esse commodo eu. Sint nisi labore et eu id dolor pariatur non aliqua nostrud culpa occaecat sit. Velit ad officia ea et excepteur culpa ad minim occaecat excepteur magna amet. Sint officia duis cillum sint ipsum nostrud officia labore velit non. In anim labore fugiat consectetur magna elit sunt reprehenderit.
-
-Eu dolor nulla minim adipisicing consectetur mollit enim minim incididunt ea duis in aute cupidatat. Velit in fugiat sunt ipsum occaecat aliquip dolore est adipisicing sint consectetur. Nostrud dolor fugiat dolore exercitation aliqua id sit proident do consequat qui et eiusmod nulla. Sint aliquip consequat Lorem dolor sit dolore mollit nulla proident aliqua ut irure amet. Nostrud deserunt culpa dolor minim et elit excepteur. Nostrud id velit sunt Lorem exercitation veniam consequat ipsum eiusmod. Qui consectetur incididunt proident dolor qui in.
-
-Ex voluptate nostrud eiusmod nostrud minim deserunt consequat labore commodo exercitation magna. Nulla dolore consequat irure Lorem id et veniam et. Voluptate mollit anim deserunt consectetur do amet ullamco minim officia consectetur fugiat quis aliqua. Mollit minim ea est velit labore cillum duis sit non Lorem ipsum. Id nulla cupidatat ipsum nostrud nisi.
-
-Enim deserunt anim occaecat anim occaecat. Elit ipsum duis ea magna deserunt. Eiusmod nulla mollit esse aliqua id proident tempor. Amet tempor cillum qui est nostrud anim laborum voluptate ea ut. Dolore irure et laboris adipisicing nostrud. Eu pariatur sunt id consequat Lorem elit quis magna do commodo.
-
-Adipisicing cupidatat anim ut mollit quis ullamco ut anim cupidatat esse cupidatat veniam pariatur elit. Irure irure commodo exercitation consequat sint ea incididunt non in irure velit esse. Adipisicing elit irure consequat ea eu proident amet nisi ut aute.
 </div>
       </div>
     </div>
   </div>
+
+{% include "partials/superscript_popup.nunjucks" %}
 
 
 <!-- Adds the footer partial -->
