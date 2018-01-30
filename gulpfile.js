@@ -1,6 +1,7 @@
 var gulp            = require('gulp');
 var less            = require('gulp-less');
 var path            = require('path');
+var upath           = require('upath');
 var browserSync     = require('browser-sync').create();
 var scp             = require('scp');
 var sitemap         = require('gulp-sitemap');
@@ -146,7 +147,8 @@ gulp.task('less', function () {
 
 function getDataForFile(file) {
   return {
-    last_modified: get_last_modified(file)
+    last_modified: get_last_modified(file),
+    canonical_path: get_canonical_path(file)
   };
 }
 
@@ -182,6 +184,32 @@ gulp.task('browserSync', function() {
   })
 })
 
+// Give the canonical url path to fill out ...
+//   <link rel="canonical" href="https://www.vagnerr.com/{{canonical_path}}" />
+// .. to keep google happy :)
+//  ( https://support.google.com/webmasters/answer/139066#rel-canonical-link-method )
+function get_canonical_path(file) {
+
+  let filedir = path.dirname( file.relative );
+  let filebase = path.basename(file.relative, path.extname(file.relative));
+
+  if ( filebase == "index") {
+    // Skip "index.html"
+    if ( filedir == "." ){
+      // root dir "...vagnerr.com/index.html" special case gives "." so return nothing
+      return "";
+    }
+    else {
+      return upath.normalize(filedir) + "/";  // I like trailing slashes on my URLs
+    }
+
+  }
+  else {
+    return upath.normalize(  path.join ( filedir, filebase + '.html' ));
+  }
+
+
+}
 
 function get_last_modified(file) {
       // Calculate the source .nunjucks file and
